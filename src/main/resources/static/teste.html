@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trocar Imagem ao Passar o Mouse</title>
+  <style>
+    .imagem-container {
+      width: 150px; /* Defina a largura desejada para a imagem */
+      height: 150; /* Defina a altura desejada para a imagem */
+      overflow: hidden; /* Garante que não vaze conteúdo fora do container */
+    }
+    .imagem-container img {
+      width: 50%;
+      height: 50%;
+      transition: opacity 0.5s ease-in-out; /* Transição suave ao trocar a imagem */
+    }
+    .imagem-container img.principal {
+      position: absolute;
+      opacity: 1;
+    }
+    .imagem-container img.secundaria {
+      position: absolute;
+      opacity: 0;
+    }
+    .imagem-container:hover .principal {
+      opacity: 0; /* Esconde a imagem principal ao passar o mouse */
+    }
+    .imagem-container:hover .secundaria {
+      opacity: 1; /* Mostra a imagem secundária ao passar o mouse */
+    }
+  </style>
+</head>
+<body>
+  <div class="imagem-container">
+    <img src="img/brinco1.jpg" alt="Imagem Principal" class="principal">
+    <img src="img/brinco2.jpg" alt="Imagem Secundária" class="secundaria">
+  </div>
+</body>
+</html>

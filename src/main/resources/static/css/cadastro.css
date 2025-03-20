@@ -1,0 +1,127 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+* {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+body {
+    background-color: #fafaef;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.logo {
+    width: 50%
+}
+
+.box {
+    display: flex;
+    width: 930px;
+}
+
+.w50 {
+    width: 50%;
+    float: left;
+    padding-right: 15px;
+}
+
+.form-box {
+    background-color: #f1d0da;
+    width: 50%;
+    border-radius: 20px 20px;
+    width: 557px;
+    margin: auto;
+    padding: 40px;
+}
+
+.cadastrar {
+    font-weight: bold;
+}
+
+.form-box p {
+    font-weight: bold;
+}
+
+.form-box form {
+    margin: 20px 0;
+}
+
+form .inserir {
+    margin-bottom: 15px;
+}
+
+form .inserir label {
+    color: #ae6e7f;
+    font-weight: bold;
+    display: flex;
+    margin-bottom: 5px;
+
+}
+
+form .inserir input {
+    width: 97%;
+    height: 40px;
+    background-color: #eab4c3;
+    border-radius: 20px;
+    outline: none;
+    border: 2px solid transparent;
+    padding: 6px;
+    font-size: 15px;
+    color: #fafaef;
+    font-weight: bold;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 4px rgba(199, 199, 199, 0.5);
+}
+
+::placeholder {
+    color: #fafaef;
+    opacity: 70%;
+}
+
+form .inserir input:focus {
+    border-color: #bc8098;
+}
+
+form #enviar {
+    width: 100%;
+    height: 47px;
+    background: #cf8ea0;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    margin-top: 15px;
+    color: #fafaef;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease-in;
+}
+
+form #enviar:hover {
+    background-color: #ae6e7f;
+    transition: all 0.2s ease-out;
+}
+
+@media (max-width:950px) {
+    .box {
+        width: 600px;
+    }
+
+    .form-box {
+        width: 90%;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width:500px) {
+    .w50 {
+        width: 100%;
+        padding: 0;
+    }
+}
