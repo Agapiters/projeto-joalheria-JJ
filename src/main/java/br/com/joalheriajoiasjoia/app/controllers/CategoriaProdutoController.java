@@ -19,30 +19,36 @@ import br.com.joalheriajoiasjoia.app.services.CategoriaProdutoService;
 @RequestMapping("/categoriaProduto")
 public class CategoriaProdutoController {
 
-	@Autowired
-	private CategoriaProdutoService categoriaProdutoService;
+    @Autowired
+    private CategoriaProdutoService categoriaProdutoService;
 
-	@PostMapping
-	public CategoriaProduto createCategoria(@RequestBody CategoriaProduto categoriaProduto) {
-		return CategoriaProdutoService.saveCategoriaProduto(categoriaProduto);
-	}
-	@GetMapping
-	public List<CategoriaProduto> getAllCategoriaProdutos() {
-		return categoriaProdutoService.getAllCategoriaProdutos();
-	}
-	
-	@GetMapping("/{id}")
-	public CategoriaProduto getCategoriaProduto(@PathVariable Long id) {
-		return categoriaProduto.getCategoriaProdutoById(id);
-	}
-	
-	@PutMapping
-	public CategoriaProduto editCategoriaProduto(@RequestBody CategoriaProduto categoriaProduto) {
-		return CategoriaProdutoService.saveCategoriaProduto(categoriaProduto);
-	}
-	
-	@DeleteMapping("/{id}")
-	public void deleteCategoria(@PathVariable Long id) {
-	categoriaProdutoService.deleteCategoria(id);
-	}
+    // Criar uma nova CategoriaProduto
+    @PostMapping
+    public CategoriaProduto createCategoria(@RequestBody CategoriaProduto categoriaProduto) {
+        return categoriaProdutoService.saveCategoriaProduto(categoriaProduto);
+    }
+
+    // Obter todas as CategoriaProduto
+    @GetMapping
+    public List<CategoriaProduto> getAllCategoriaProdutos() {
+        return categoriaProdutoService.getAllCategoriaProdutos();
+    }
+
+    // Obter uma CategoriaProduto específica por ID
+    @GetMapping("/{id}")
+    public CategoriaProduto getCategoriaProduto(@PathVariable Long id) {
+        return categoriaProdutoService.getCategoriaProdutoById(id);
+    }
+
+    // Editar uma CategoriaProduto existente
+    @PutMapping
+    public CategoriaProduto editCategoriaProduto(@RequestBody CategoriaProduto categoriaProduto) {
+        return categoriaProdutoService.saveCategoriaProduto(categoriaProduto);
+    }
+
+    // Deletar uma CategoriaProduto por ID
+    @DeleteMapping("/{id}")
+    public void deleteCategoria(@PathVariable Long id) {
+        categoriaProdutoService.deleteCategoria(id);
+    }
 }
