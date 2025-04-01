@@ -459,6 +459,8 @@ form .pesquisar:focus::placeholder {
   box-shadow: 0 8px 8px rgba(70, 70, 70, 0.1);
 }
 
+
+
 .grid-item img {
   max-width: 100%;
   height: auto;
@@ -481,12 +483,36 @@ form .pesquisar:focus::placeholder {
   text-align: left;
 }
 
+.desconto{
+  color: #e9c7d1;
+  text-align: left;
+  font-size: 15px;
+  text-decoration: line-through 2px;
+}
+
 .grid-item p {
   margin-top: 10px;
   font-size: 14px;
   color: #555;
   text-align: left;
 }
+
+.tag{
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  color: #fafaef;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-right: 15px;
+  background-color:#c98295;
+  border-radius: 50px; 
+}
+
+.container{
+  position: relative;
+  display: inline-block;
+ }
 
 .topico {
   display: flex;
