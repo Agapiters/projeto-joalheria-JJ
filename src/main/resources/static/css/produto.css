@@ -393,7 +393,6 @@ a {
 .grid-img {
     background-color: #fafaef;
     border-radius: 10px;
-    border: 2px solid #ebb3c3;
     text-align: center;
     padding: 13px;
     margin-bottom: 30px;
@@ -411,9 +410,9 @@ a {
 .grid-desc {
     background-color: #fafaef;
     border-radius: 10px;
-    text-align: center;
+    text-align: left;
     padding: 13px;
-    margin-bottom: 30px;
+    margin: 30px;
     transition: all 0.2s ease-in;
 }
 
