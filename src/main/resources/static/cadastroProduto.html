@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/produto.css">
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon"> <!-- foto da aba do site -->
+    <link rel="icon" href="./img/logo.png" sizes="32x32">
+    <title>Produto JJ</title>
+</head>
+
+<body>
+    <div class="box">
+        <div class="form-box">
+            <h1>Cadastro Produto</h1>
+            <form class="form" id="cadastroClienteForm">
+                <div class="inserir">
+                    <label for="nome"> Nome </label>
+                    <input type="text" id="nome" placeholder="Digite o nome da joia" required>
+                </div>
+
+                <div class="inserir">
+                    <label for="descricao">Descrição</label>
+                    <input type="email" id="descricao" placeholder="Monte a descrição da joia" required>
+                </div>
+
+                <div class="inserir">
+                    <label for="preco">Preço</label>
+                    <input type="text" id="preco" placeholder="Digite o preço" required>
+                </div>
+
+                <div class="grid">
+                    <label for="file-upload" class="custom-file-upload">
+                        Envie uma imagem
+                    </label>
+                    <input id="file-upload" type="file" />
+                    <div class="selecione">
+                        <select class="opcoes" name="categoria" required>
+                            <option value="">Categoria</option>
+                            <option value="Anel">Anel</option>
+                            <option value="brinco">Brinco</option>
+                            <option value="colar">Colar</option>
+                            <option value="pulseira">Pulseira</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+
+                <div>
+                    <input type="submit" class="cadastrar" value="Cadastrar" id="enviar">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -46,8 +46,9 @@ body {
 }
 
 .logo {
-  width: 130px;
+  width: 90px;
   margin-left: 5%;
+  margin-top: 5px;
 }
 
 .icones {
@@ -102,8 +103,7 @@ body {
 .navbar2 .link {
   color: #fafaef;
   margin: 0 15px;
-  text-decoration: none;
-  font-size: 16px;
+  font-size: 15px;
   transition: all 0.2s ease-in;
   cursor: pointer;
 }
@@ -184,7 +184,8 @@ form .pesquisar:focus::placeholder {
 .logo-mobile {
   display: block;
   margin: 0 auto;
-  width: 130px;
+  width: 80px;
+
 }
 
 .icones-mobile .perfil-mobile {
@@ -447,7 +448,7 @@ form .pesquisar:focus::placeholder {
   border-radius: 10px;
   border: 2px solid #ebb3c3;
   text-align: center;
-  padding: 10px;
+  padding: 13px;
   margin-bottom: 30px;
   transition: all 0.2s ease-in;
   cursor: pointer;
@@ -492,7 +493,7 @@ form .pesquisar:focus::placeholder {
 
 .grid-item p {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 17px;
   color: #555;
   text-align: left;
 }
