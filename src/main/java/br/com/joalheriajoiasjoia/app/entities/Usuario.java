@@ -1,24 +1,16 @@
 package br.com.joalheriajoiasjoia.app.entities;
 
+import jakarta.persistence.*;
 import java.util.Date;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-
-
 @Entity
-@Table(name = "tb_cliente")
-public class Cliente {
+@Table(name = "tb_usuario")
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
+    @Column(name = "id_usuario", nullable = false)
+    private Long id_usuario;
 
     @Column(name = "nome", nullable = false, length = 100)
     private String nome;
@@ -26,38 +18,38 @@ public class Cliente {
     @Column(name = "cpf", nullable = false, length = 11, unique = true)
     private String cpf;
 
-    @Column(name = "email", nullable = false, unique = true, length = 50)
-    private String email;
-
     @Column(name = "telefone", nullable = false, length = 15)
     private String telefone;
+
+    @Column(name = "email", nullable = false, unique = true, length = 50)
+    private String email;
 
     @Column(name = "senha", nullable = false, length = 100)
     private String senha;
 
-    @Column(name = "dt_nasc", nullable = true)
-    private Date dt_nasc;
+    @Column(name = "dt_nascimento", nullable = true)
+    private Date dtNascimento;
 
     // Construtores
-    public Cliente() {}
+    public Usuario() {}
 
-    public Cliente(Long id, String nome, String cpf, String email, String telefone, String senha, Date dt_nasc) {
-        this.id = id;
+    public Usuario(Long id_usuario, String nome, String cpf, String telefone, String email, String senha, Date dtNascimento) {
+        this.id_usuario = id_usuario;
         this.nome = nome;
         this.cpf = cpf;
-        this.email = email;
         this.telefone = telefone;
+        this.email = email;
         this.senha = senha;
-        this.dt_nasc = dt_nasc;
+        this.dtNascimento = dtNascimento;
     }
 
     // Getters e Setters
-    public Long getId() {
-        return id;
+    public Long getId_usuario() {
+        return id_usuario;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId_usuario(Long id_usuario) {
+        this.id_usuario = id_usuario;
     }
 
     public String getNome() {
@@ -76,20 +68,20 @@ public class Cliente {
         this.cpf = cpf;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getTelefone() {
         return telefone;
     }
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getSenha() {
@@ -100,11 +92,11 @@ public class Cliente {
         this.senha = senha;
     }
 
-    public Date getDt_nasc() {
-        return dt_nasc;
+    public Date getDtNascimento() {
+        return dtNascimento;
     }
 
-    public void setDt_nasc(Date dt_nasc) {
-        this.dt_nasc = dt_nasc;
+    public void setDtNascimento(Date dtNascimento) {
+        this.dtNascimento = dtNascimento;
     }
 }
