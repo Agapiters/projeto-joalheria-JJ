@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon"> <!-- foto da aba do site -->
+    <link rel="icon" href="./img/logo.png" sizes="32x32">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/produto.css">
+    <title>Joalheria Jóias Jóia</title>
+</head>
+
+<body>
+
+    <!-- nav para desktop -->
+
+    <header class="desktop-only">
+        <div class="nav">
+            <img class="logo" src="img/logo2.png" alt="">
+            <div class="icones">
+                <form role="search">
+                    <input class="pesquisar" type="search" placeholder="Procurar" aria-label="pesquisar">
+                </form>
+                <a href="perfilLogin.html"><img class="perfil" src="img/profile.png" alt=""></a>
+            </div>
+        </div>
+        <div class="divisoria"></div>
+
+        <!-- nav separada da nav principal -->
+
+        <div class="nav2">
+            <div class="navbar2">
+                <a href="#novidades" class="link">Novidades</a>
+                <a href="#descontos" class="link">Descontos</a>
+                <a href="#colares" class="link">Colares</a>
+                <a href="#pulseiras" class="link">Pulseiras</a>
+                <a href="#brincos" class="link">Brincos</a>
+                <a href="#aneis" class="link">Anéis</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- nav para mobile -->
+
+    <header class="mobile-only">
+        <div class="nav-mobile">
+            <img class="logo-mobile" src="img/logo2.png" alt="">
+            <div class="icones-mobile">
+                <a href="perfilLogin.html"><img class="perfil-mobile" src="img/profile.png" alt=""></a>
+            </div>
+
+            <!-- nav para modal para topicos mobile -->
+
+            <div class="modal">
+                <input type="checkbox" class="modal-trigger" id="modal">
+                <label class="modal-overlay" for="modal"></label>
+                <label class="button" for="modal">
+                    <img class="button" src="img/hamburger.png" alt="">
+                </label>
+
+                <div class="modal-container">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="#novidades" class="link-mobile">Novidades</a><br>
+                            <a href="#descontos" class="link-mobile">Descontos</a><br>
+                            <a href="#colares" class="link-mobile">Colares</a><br>
+                            <a class="link-mobile">Pulseiras</a><br>
+                            <a class="link-mobile">Brincos</a><br>
+                            <a class="link-mobile">Anéis</a><br>
+                        </div>
+                        <div class="card-footer">
+                            <form class="form" role="search">
+                                <input class="pesquisar-mobile" type="search" placeholder="Procurar"
+                                    aria-label="pesquisar">
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="espaco-menor"></div>
+
+    <!-- produto -->
+
+    <div class="produto">
+        <div class="grid-img">
+            <img src="img/colar1.jpg" alt="">
+        </div>
+        <div class="grid-desc">
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum similique, ipsum impedit excepturi ut
+                numquam. </h2>
+        </div>
+
+
+    </div>
+    <!-- final -->
+
+    <footer class="footer">
+        <div class="devs">
+            <h3 class="sobre">Sobre nós:</h3>
+            <br>
+            <a href="https://github.com/brunothiagoribeiro">
+                <p class="link-time"><img class="github" src="img/github.png" alt="">Bruno Thiago</p>
+            </a>
+            <a href="https://github.com/isagapito">
+                <p class="link-time"><img class="github" src="img/github.png" alt="">Isabele Agapito</p>
+            </a>
+            <a href="https://github.com/john-lima17">
+                <p class="link-time"><img class="github" src="img/github.png" alt="">João Vitor Lima</p>
+            </a>
+            <a href="https://github.com/blightpb">
+                <p class="link-time"><img class="github" src="img/github.png" alt="">Rafaela Paz</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
