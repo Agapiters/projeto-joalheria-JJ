@@ -28,19 +28,23 @@ public class Usuario {
     private String senha;
 
     @Column(name = "dt_nascimento", nullable = true)
-    private Date dtNascimento;
+    private Date dt_Nascimento;
+   
+    @ManyToOne
+    @JoinColumn(name = "tipo_usuario")
+    private TipoUsuario tipousuario;
 
     // Construtores
     public Usuario() {}
 
-    public Usuario(Long id_usuario, String nome, String cpf, String telefone, String email, String senha, Date dtNascimento) {
+    public Usuario(Long id_usuario, String nome, String cpf, String telefone, String email, String senha, Date dt_Nascimento) {
         this.id_usuario = id_usuario;
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;
         this.email = email;
         this.senha = senha;
-        this.dtNascimento = dtNascimento;
+        this.dt_Nascimento = dt_Nascimento;
     }
 
     // Getters e Setters
@@ -92,11 +96,11 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public Date getDtNascimento() {
-        return dtNascimento;
+    public Date getDt_Nascimento() {
+        return dt_Nascimento;
     }
 
-    public void setDtNascimento(Date dtNascimento) {
-        this.dtNascimento = dtNascimento;
+    public void setDt_Nascimento(Date dt_Nascimento) {
+        this.dt_Nascimento = dt_Nascimento;
     }
 }
