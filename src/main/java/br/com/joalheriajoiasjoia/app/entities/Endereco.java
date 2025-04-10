@@ -11,50 +11,46 @@ import jakarta.persistence.Table;
 @Table(name = "tb_endereco")
 public class Endereco {
 	// Atributos
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idEndereco", nullable = false)
+	@Column(name = "id_endereco", nullable = false)
 	private Long idEndereco;
 	
-	@Column(name = "cep", nullable = false, length = 8)
+	@Column(name = "cep", nullable = false)
 	private String cep;
-	
-	@Column(name = "rua", nullable = false, length = 100)
-	private String rua;
-	
-	@Column(name = "numCasa", nullable = false)
-	private String numCasa;
-	
-	@Column(name = "cidade", nullable = false, length = 100)
-	private String cidade;
-	
-	@Column(name = "estado", nullable = false, length = 2)
-	private String estado;
-	
-	@Column(name = "comp", nullable = false, length = 100)
-	private String comp;
-	
-	@Column(name = "bairro", nullable = false, length = 100)
+
+	@Column(name = "nome_rua", nullable = false)
+	private String nomeRua;
+
+	@Column(name = "numero_casa", nullable = false)
+	private String numeroCasa;
+
+	@Column(name = "bairro", nullable = false)
 	private String bairro;
 
-	// Construtores
+	@Column(name = "cidade", nullable = false)
+	private String cidade;
+
+	@Column(name = "estado", unique = false)
+	private String estado;
 	
+	//Construtores
 	public Endereco() {
+		
 	}
-	
-	public Endereco(Long idEndereco, String cep, String rua, String numCasa, String cidade, String estado, String comp, String bairro) {
+
+	public Endereco(Long idEndereco, String cep, String nomeRua, String numeroCasa, String bairro, String cidade,
+			String estado) {
 		this.idEndereco = idEndereco;
 		this.cep = cep;
-		this.rua = rua;
-		this.numCasa = numCasa;
+		this.nomeRua = nomeRua;
+		this.numeroCasa = numeroCasa;
+		this.bairro = bairro;
 		this.cidade = cidade;
 		this.estado = estado;
-		this.comp = comp;
-		this.bairro = bairro;
 	}
 	
-	//Getters e setters
+	//GettersSetters
 
 	public Long getIdEndereco() {
 		return idEndereco;
@@ -72,20 +68,28 @@ public class Endereco {
 		this.cep = cep;
 	}
 
-	public String getRua() {
-		return rua;
+	public String getNomeRua() {
+		return nomeRua;
 	}
 
-	public void setRua(String rua) {
-		this.rua = rua;
+	public void setNomeRua(String nomeRua) {
+		this.nomeRua = nomeRua;
 	}
 
-	public String getNumCasa() {
-		return numCasa;
+	public String getNumeroCasa() {
+		return numeroCasa;
 	}
 
-	public void setNumCasa(String numCasa) {
-		this.numCasa = numCasa;
+	public void setNumeroCasa(String numeroCasa) {
+		this.numeroCasa = numeroCasa;
+	}
+
+	public String getBairro() {
+		return bairro;
+	}
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
 	}
 
 	public String getCidade() {
@@ -103,21 +107,9 @@ public class Endereco {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-
-	public String getComp() {
-		return comp;
-	}
-
-	public void setComp(String comp) {
-		this.comp = comp;
-	}
-
-	public String getBairro() {
-		return bairro;
-	}
-
-	public void setBairro(String bairro) {
-		this.bairro = bairro;
-	}
+	
+	
+	
+	
 
 }

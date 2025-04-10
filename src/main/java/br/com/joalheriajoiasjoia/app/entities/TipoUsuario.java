@@ -1,50 +1,43 @@
 package br.com.joalheriajoiasjoia.app.entities;
 
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "tb_tipo_usuario")
 public class TipoUsuario {
-	// Atributos
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_tipo_usuario", nullable = false)
-	private long idTipoUsuario;
 
-	@Column(name = "nome_tipo_usuario", nullable = false)
-	private String nomeTipoUsuario;
+    // Atributos
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_tipo_usuario", nullable = false)
+    private long id_tipo_usuario;
 
-	// Construtores
-	public TipoUsuario() {
+    @Column(name = "nome_tipo_usuario", nullable = false)
+    private String nome_tipo_usuario;
 
-	}
+    // Construtores
+    public TipoUsuario() {
+    }
 
-	public TipoUsuario(long id, String nomeTipoUsuario) {
-		this.idTipoUsuario = id;
-		this.nomeTipoUsuario = nomeTipoUsuario;
-	}
+    public TipoUsuario(long id_tipo_usuario, String nome_tipo_usuario) {
+        this.id_tipo_usuario = id_tipo_usuario;
+        this.nome_tipo_usuario = nome_tipo_usuario;
+    }
 
-	// Getters e Setters
-	public long getId() {
-		return idTipoUsuario;
-	}
+    // Getters e Setters
+    public long getId_tipo_usuario() {
+        return id_tipo_usuario;
+    }
 
-	public void setId(long id) {
-		this.idTipoUsuario = id;
-	}
+    public void setId_tipo_usuario(long id_tipo_usuario) {
+        this.id_tipo_usuario = id_tipo_usuario;
+    }
 
-	public String getNomeTipoUsuario() {
-		return nomeTipoUsuario;
-	}
+    public String getNome_tipo_usuario() {
+        return nome_tipo_usuario;
+    }
 
-	public void setNomeTipoUsuario(String nomeTipoUsuario) {
-		this.nomeTipoUsuario = nomeTipoUsuario;
-	}
-
+    public void setNome_tipo_usuario(String nome_tipo_usuario) {
+        this.nome_tipo_usuario = nome_tipo_usuario;
+    }
 }

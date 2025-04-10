@@ -16,9 +16,8 @@ import br.com.joalheriajoiasjoia.app.entities.Endereco;
 import br.com.joalheriajoiasjoia.app.services.EnderecoService;
 
 @RestController
-@RequestMapping("/enderecoCliente")
+@RequestMapping("/cadastroendereco")
 public class EnderecoController {
-
 	@Autowired
 	private EnderecoService enderecoService;
 
@@ -38,7 +37,7 @@ public class EnderecoController {
 	}
 
 	@PutMapping
-	public Endereco editEndereco(@RequestBody Endereco endereco) {
+	public Endereco editCliente(@RequestBody Endereco endereco) {
 		return enderecoService.saveEndereco(endereco);
 	}
 

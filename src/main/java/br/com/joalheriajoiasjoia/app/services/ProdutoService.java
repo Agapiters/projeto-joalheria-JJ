@@ -1,37 +1,32 @@
 package br.com.joalheriajoiasjoia.app.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import br.com.joalheriajoiasjoia.app.entities.Produto;
 import br.com.joalheriajoiasjoia.app.repositories.ProdutoRepository;
 
-import java.util.List;
-import java.util.Optional;
-
 @Service
 public class ProdutoService {
+	@Autowired
+	private ProdutoRepository produtoRepository;
 
-    @Autowired
-    private ProdutoRepository produtoRepository;
+	public Produto saveProduto(Produto produto) {
+		return produtoRepository.save(produto);
+	}
 
-    // Criar ou atualizar um Produto
-    public Produto saveProduto(Produto produto) {
-        return produtoRepository.save(produto);
-    }
+	public List<Produto> getAllProduto() {
+		return produtoRepository.findAll();
+	}
 
-    // Obter todos os Produtos
-    public List<Produto> getAllProdutos() {
-        return produtoRepository.findAll();
-    }
+	public Produto getProdutoById(Long id) {
+		return produtoRepository.findById(id).orElse(null);
+	}
 
-    // Obter um Produto por ID
-    public Produto getProdutoById(Long id) {
-        Optional<Produto> produto = produtoRepository.findById(id);
-        return produto.orElse(null);
-    }
+	public void deleteProduto(Long id) {
+		produtoRepository.deleteById(id);
+	}
 
-    // Deletar um Produto por ID
-    public void deleteProduto(Long id) {
-        produtoRepository.deleteById(id);
-    }
 }

@@ -1,106 +1,128 @@
 package br.com.joalheriajoiasjoia.app.entities;
 
-import jakarta.persistence.*;
 import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_usuario")
 public class Usuario {
+	// Atributos
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_usuario", nullable = false)
+	private Long id_usuario;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_usuario", nullable = false)
-    private Long id_usuario;
+	@Column(name = "nome_usuario", nullable = false, length = 100)
+	private String nomeUsuario;
 
-    @Column(name = "nome", nullable = false, length = 100)
-    private String nome;
+	@Column(name = "cpf", nullable = false, length = 11, unique = true)
+	private String cpf;
 
-    @Column(name = "cpf", nullable = false, length = 11, unique = true)
-    private String cpf;
+	@Column(name = "telefone", nullable = false)
+	private String telefone;
 
-    @Column(name = "telefone", nullable = false, length = 15)
-    private String telefone;
+	@Column(name = "data_nascimento")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date dataNascimento;
 
-    @Column(name = "email", nullable = false, unique = true, length = 50)
-    private String email;
+	@Column(name = "email", nullable = false, unique = true, length = 50)
+	private String email;
 
-    @Column(name = "senha", nullable = false, length = 100)
-    private String senha;
+	@Column(name = "senha", nullable = false, unique = true, length = 50)
+	private String senha;
 
-    @Column(name = "dt_nascimento", nullable = true)
-    private Date dt_Nascimento;
-   
-    @ManyToOne
-    @JoinColumn(name = "tipo_usuario")
-    private TipoUsuario tipousuario;
+	@ManyToOne
+	@JoinColumn(name = "tipo_usuario", nullable = false)
+	private TipoUsuario tipo_usuario;
 
-    // Construtores
-    public Usuario() {}
+	// Construtores
+	public Usuario() {
+	}
 
-    public Usuario(Long id_usuario, String nome, String cpf, String telefone, String email, String senha, Date dt_Nascimento) {
-        this.id_usuario = id_usuario;
-        this.nome = nome;
-        this.cpf = cpf;
-        this.telefone = telefone;
-        this.email = email;
-        this.senha = senha;
-        this.dt_Nascimento = dt_Nascimento;
-    }
+	public Usuario(Long id_usuario, String nomeUsuario, String cpf, String telefone, Date dataNascimento,
+			String email, String senha, TipoUsuario tipo_usuario) {
+		this.id_usuario = id_usuario;
+		this.nomeUsuario = nomeUsuario;
+		this.cpf = cpf;
+		this.telefone = telefone;
+		this.dataNascimento = dataNascimento;
+		this.email = email;
+		this.senha = senha;
+		this.tipo_usuario = tipo_usuario;
+	}
 
-    // Getters e Setters
-    public Long getId_usuario() {
-        return id_usuario;
-    }
+	// Getters e Setters
+	public Long getId_usuario() {
+		return id_usuario;
+	}
 
-    public void setId_usuario(Long id_usuario) {
-        this.id_usuario = id_usuario;
-    }
+	public void setId_usuario(Long id_usuario) {
+		this.id_usuario = id_usuario;
+	}
 
-    public String getNome() {
-        return nome;
-    }
+	public String getNomeUsuario() {
+		return nomeUsuario;
+	}
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+	public void setNomeUsuario(String nomeUsuario) {
+		this.nomeUsuario = nomeUsuario;
+	}
 
-    public String getCpf() {
-        return cpf;
-    }
+	public String getCpf() {
+		return cpf;
+	}
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 
-    public String getTelefone() {
-        return telefone;
-    }
+	public String getTelefone() {
+		return telefone;
+	}
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public Date getDataNascimento() {
+		return dataNascimento;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
 
-    public String getSenha() {
-        return senha;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public Date getDt_Nascimento() {
-        return dt_Nascimento;
-    }
+	public String getSenha() {
+		return senha;
+	}
 
-    public void setDt_Nascimento(Date dt_Nascimento) {
-        this.dt_Nascimento = dt_Nascimento;
-    }
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public TipoUsuario getTipo_usuario() {
+		return tipo_usuario;
+	}
+
+	public void setTipo_usuario(TipoUsuario tipo_usuario) {
+		this.tipo_usuario = tipo_usuario;
+	}
 }

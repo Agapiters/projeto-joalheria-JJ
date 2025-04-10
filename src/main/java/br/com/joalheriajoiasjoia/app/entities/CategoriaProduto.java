@@ -10,51 +10,51 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "tb_categoria_produto")
 public class CategoriaProduto {
-    
-    // Atributos
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_categoria", nullable = false)
-    private Long id_categoria;
+	// Atributos
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_categoria_produto", nullable = false)
+	private long id;
 
-    @Column(name = "nome", nullable = false, length = 100)
-    private String nome;
+	@Column(name = "nome_categoria_produto", nullable = false)
+	private String nomeProduto;
 
-    @Column(name = "descricao", nullable = true, length = 255)
-    private String descricao;
+	@Column(name = "descricao_categoria_produto", nullable = false)
+	private String descricao;
+	
+	//Construtores
+	public CategoriaProduto() {
 
-    // Construtores
-    public CategoriaProduto() {
-    }
+	}
 
-    public CategoriaProduto(Long id_categoria, String nome, String descricao) {
-        this.id_categoria = id_categoria;
-        this.nome = nome;
-        this.descricao = descricao;
-    }
+	public CategoriaProduto(long id, String nomeProduto, String descricao) {
+		this.id = id;
+		this.nomeProduto = nomeProduto;
+		this.descricao = descricao;
+	}
+	
+	//Getters e Setters
+	public long getId() {
+		return id;
+	}
 
-    // Getters e setters
-    public Long getId_categoria() {
-        return id_categoria;
-    }
+	public void setId(long id) {
+		this.id = id;
+	}
 
-    public void setId_categoria(Long id_categoria) {
-        this.id_categoria = id_categoria;
-    }
+	public String getNomeProduto() {
+		return nomeProduto;
+	}
 
-    public String getNome() {
-        return nome;
-    }
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
+	}
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+	public String getDescricao() {
+		return descricao;
+	}
 
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 }

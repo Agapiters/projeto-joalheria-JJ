@@ -1,11 +1,17 @@
 package br.com.joalheriajoiasjoia.app.entities;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_material")
 public class Material {
 
+    // Atributos
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_material", nullable = false)
@@ -18,7 +24,8 @@ public class Material {
     private String descricao;
 
     // Construtores
-    public Material() {}
+    public Material() {
+    }
 
     public Material(Long id_material, String nome, String descricao) {
         this.id_material = id_material;

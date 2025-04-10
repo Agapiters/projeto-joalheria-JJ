@@ -1,7 +1,6 @@
 package br.com.joalheriajoiasjoia.app.services;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,22 +11,23 @@ import br.com.joalheriajoiasjoia.app.repositories.UsuarioRepository;
 @Service
 public class UsuarioService {
 
-    @Autowired
-    private UsuarioRepository usuarioRepository;
+	@Autowired
+	private UsuarioRepository UsuarioRepository;
 
-    public List<Usuario> listarTodos() {
-        return usuarioRepository.findAll();
-    }
+	public Usuario saveUsuario(Usuario usuario) {
+		return UsuarioRepository.save(usuario);
+	}
 
-    public Optional<Usuario> buscarPorId(Long id) {
-        return usuarioRepository.findById(id);
-    }
+	public List<Usuario> getAllUsuarios() {
+		return UsuarioRepository.findAll();
+	}
 
-    public Usuario salvar(Usuario usuario) {
-        return usuarioRepository.save(usuario);
-    }
+	public Usuario getUsuarioById(Long id) {
+		return UsuarioRepository.findById(id).orElse(null);
+	}
 
-    public void deletar(Long id) {
-        usuarioRepository.deleteById(id);
-    }
+	public void deleteUsuario(Long id) {
+		UsuarioRepository.deleteById(id);
+	}
+
 }

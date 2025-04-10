@@ -18,13 +18,3 @@ INSERT IGNORE INTO tb_tipo_produto (id_tipo_produto, nome_tipo_produto, descrica
 (1, 'Ouro', '18k'),
 (2, 'Prata', '750'),
 (3, 'Bijuteria', 'É biju mas é de rico');
-
-<label for="categoriaProduto">Categoria:</label>
-            <select id="categoriaProduto" name="categoriaProduto" required>
-                <option value="">Selecione uma categoria</option>
-                <option value="1">Anéis</option>
-                <option value="2">Colares</option>
-                <option value="3">Brincos</option>
-                <option value="4">Pulseiras</option>
-                <option value="5">Relógios</option>
-            </select>

@@ -1,46 +1,48 @@
 package br.com.joalheriajoiasjoia.app.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import br.com.joalheriajoiasjoia.app.entities.Produto;
 import br.com.joalheriajoiasjoia.app.services.ProdutoService;
 
-import java.util.List;
-
 @RestController
-@RequestMapping("/produtos")
+@RequestMapping("/cadastroproduto")
 public class ProdutoController {
+	@Autowired
+	private ProdutoService produtoService;
 
-    @Autowired
-    private ProdutoService produtoService;
+	@PostMapping
+	public Produto createProduto(@RequestBody Produto produto) {
+		return produtoService.saveProduto(produto);
+	}
 
-    // Criar um novo Produto
-    @PostMapping
-    public Produto createProduto(@RequestBody Produto produto) {
-        return produtoService.saveProduto(produto);
-    }
+	@GetMapping
+	public List<Produto> getAllProdutos() {
+		return produtoService.getAllProduto();
+	}
+	
+	@GetMapping("/{id}")
+	public Produto getProduto(@PathVariable Long id) {
+		return produtoService.getProdutoById(id);
+	}
 
-    // Obter todos os Produtos
-    @GetMapping
-    public List<Produto> getAllProdutos() {
-        return produtoService.getAllProdutos();
-    }
+	@PutMapping
+	public Produto editCliente(@RequestBody Produto produto) {
+		return produtoService.saveProduto(produto);
+	}
 
-    // Obter um Produto específico por ID
-    @GetMapping("/{id}")
-    public Produto getProduto(@PathVariable Long id) {
-        return produtoService.getProdutoById(id);
-    }
-
-    // Atualizar um Produto existente
-    @PutMapping
-    public Produto updateProduto(@RequestBody Produto produto) {
-        return produtoService.saveProduto(produto);
-    }
-
-    // Deletar um Produto por ID
-    @DeleteMapping("/{id}")
-    public void deleteProduto(@PathVariable Long id) {
-        produtoService.deleteProduto(id);
-    }
+	@DeleteMapping("/{id}")
+	public void deleteProduto(@PathVariable Long id) {
+		produtoService.deleteProduto(id);
+	}
 }
