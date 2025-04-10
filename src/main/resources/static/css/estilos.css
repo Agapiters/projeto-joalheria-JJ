@@ -103,7 +103,7 @@ body {
 .navbar2 .link {
   color: #fafaef;
   margin: 0 15px;
-  font-size: 15px;
+  font-size: 100%;
   transition: all 0.2s ease-in;
   cursor: pointer;
 }
@@ -137,7 +137,7 @@ form .pesquisar {
 }
 
 form .pesquisar:focus {
-  
+
   border-color: #ae6e7f;
   box-shadow: 0 4px 4px rgba(199, 199, 199, 0.5);
   outline: none;
@@ -145,7 +145,7 @@ form .pesquisar:focus {
 }
 
 form .pesquisar::placeholder {
-  font-family: 'Poppins', sans-serif!important;
+  font-family: 'Poppins', sans-serif !important;
   color: #495057;
   opacity: 50%;
 }
@@ -163,7 +163,6 @@ form .pesquisar:focus::placeholder {
 .icones form input:focus {
   background: #fafaef;
 }
-
 /* mobile */
 
 .nav-mobile {
