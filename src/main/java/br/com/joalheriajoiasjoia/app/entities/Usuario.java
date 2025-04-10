@@ -25,8 +25,13 @@ public class Usuario {
 	@Column(name = "nome_usuario", nullable = false, length = 100)
 	private String nomeUsuario;
 
+<<<<<<< HEAD
 	@Column(name = "cpf", nullable = false, length = 11, unique = true)
 	private String cpf;
+=======
+    @Column(name = "nome", nullable = false, length = 100)
+    private String nome_cliente;
+>>>>>>> 47a9a4eb7dc67a3d9965440c52a10d9088201c1c
 
 	@Column(name = "telefone", nullable = false)
 	private String telefone;
@@ -41,6 +46,7 @@ public class Usuario {
 	@Column(name = "senha", nullable = false, unique = true, length = 50)
 	private String senha;
 
+<<<<<<< HEAD
 	@ManyToOne
 	@JoinColumn(name = "tipo_usuario", nullable = false)
 	private TipoUsuario tipo_usuario;
@@ -60,6 +66,27 @@ public class Usuario {
 		this.senha = senha;
 		this.tipo_usuario = tipo_usuario;
 	}
+=======
+    @Column(name = "dt_nascimento", nullable = true)
+    private Date dt_Nascimento;
+    
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private TipoUsuario tipoUsuario;
+
+    // Construtores
+    public Usuario() {
+
+    public Usuario(Long id_usuario, String nome, String cpf, String telefone, String email, String senha, Date dt_Nascimento) {
+        this.id_usuario = id_usuario;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.email = email;
+        this.senha = senha;
+        this.dt_Nascimento = dt_Nascimento;
+    }
+>>>>>>> 47a9a4eb7dc67a3d9965440c52a10d9088201c1c
 
 	// Getters e Setters
 	public Long getId_usuario() {
@@ -110,6 +137,7 @@ public class Usuario {
 		this.email = email;
 	}
 
+<<<<<<< HEAD
 	public String getSenha() {
 		return senha;
 	}
@@ -125,4 +153,13 @@ public class Usuario {
 	public void setTipo_usuario(TipoUsuario tipo_usuario) {
 		this.tipo_usuario = tipo_usuario;
 	}
+=======
+    public Date getDtNascimento() {
+        return dt_Nascimento;
+    }
+
+    public void setDtNascimento(Date dt_Nascimento) {
+        this.dt_Nascimento = dt_Nascimento;
+    }
+>>>>>>> 47a9a4eb7dc67a3d9965440c52a10d9088201c1c
 }
