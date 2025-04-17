@@ -445,7 +445,9 @@ form .pesquisar:focus::placeholder {
 @media (max-width: 767px) {
   .catalogo {
     grid-template-columns: repeat(1, 1fr);
+    margin: 5%;
   }
+ 
 }
 
 .grid-item {

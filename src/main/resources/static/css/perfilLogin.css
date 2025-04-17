@@ -26,12 +26,6 @@ body {
     width: 930px;
 }
 
-.w50 {
-    width: 50%;
-    float: left;
-    padding-right: 15px;
-}
-
 .form-box {
     background-color: #f1d0da;
     width: 50%;
@@ -155,10 +149,4 @@ a:hover {
     }
 }
 
-@media (max-width:500px) {
-    .w50 {
-        width: 100%;
-        padding: 0;
-    }
-}
 
