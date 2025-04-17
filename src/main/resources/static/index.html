@@ -82,36 +82,66 @@
         </div>
     </header>
 
-    <div class="espaco-menor"></div>
+    <div class="desktop-only"><div class="espaco"></div></div>
+    <div class="mobile-only"><div class="espaco-menor"></div></div>
 
     <!-- carrossel de fotos -->
 
-    <div class="carousel">
-        <div class="carousel-track">
-            <div class="slide"><img class="carrossel-foto" src="img/1.jpg" alt=""></div>
-            <div class="slide"><a href="#descontos"><img class="carrossel-foto" src="img/2.jpg" alt=""></a></div>
-            <div class="slide"><img class="carrossel-foto" src="img/3.jpg" alt=""></div>
-        </div>
-
-        <div class="carousel-buttons">
-            <button class="carousel-button prev">&#8249;</button>
-            <button class="carousel-button next">&#8250;</button>
-        </div>
-
-        <div class="progress-indicators">
-            <div class="progress-bar">
-                <div class="progress-bar-fill"></div>
+    <div class="desktop-only">
+        <div class="carousel">
+            <div class="carousel-track">
+                <div class="slide"><img class="carrossel-foto" src="img/1.jpg" alt=""></div>
+                <div class="slide"><a href="#descontos"><img class="carrossel-foto" src="img/2.jpg" alt=""></a></div>
+                <div class="slide"><img class="carrossel-foto" src="img/3.jpg" alt=""></div>
             </div>
-            <div class="progress-bar">
-                <div class="progress-bar-fill"></div>
+
+            <div class="carousel-buttons">
+                <button class="carousel-button prev">&#8249;</button>
+                <button class="carousel-button next">&#8250;</button>
             </div>
-            <div class="progress-bar">
-                <div class="progress-bar-fill"></div>
+
+            <div class="progress-indicators">
+                <div class="progress-bar">
+                    <div class="progress-bar-fill"></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-bar-fill"></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-bar-fill"></div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div id="novidades" class="espaco-menor"></div>
+    <div class="mobile-only">
+        <div class="carousel">
+            <div class="carousel-track">
+                <div class="slide"><img class="carrossel-foto" src="img/1-mobile (2).png" alt=""></div>
+                <div class="slide"><a href="#descontos"><img class="carrossel-foto" src="img/2.jpg" alt=""></a></div>
+                <div class="slide"><img class="carrossel-foto" src="img/3.jpg" alt=""></div>
+            </div>
+
+            <div class="carousel-buttons">
+                <button class="carousel-button prev">&#8249;</button>
+                <button class="carousel-button next">&#8250;</button>
+            </div>
+
+            <div class="progress-indicators">
+                <div class="progress-bar">
+                    <div class="progress-bar-fill"></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-bar-fill"></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-bar-fill"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="novidades" class="espaco"></div>
 
     <!-- catalogo -->
     <div class="topico">
@@ -128,18 +158,16 @@
             </div>
             <h2>Colar de planeta</h2>
             <h3>R$129,90</h3>
-            <p>Colar na cor prata em formato de planeta com pedra com de rosa.</p>
         </div>
         <div class="grid-item">
             <a href="produto.html" src="http://localhost:8080/produto.html?id=1">
-            <div class="container">
-                <img src="img/brinco1.jpg" alt="">
-                <span class="tag">Lançamento</span>
-            </div>
+                <div class="container">
+                    <img src="img/brinco1.jpg" alt="">
+                    <span class="tag">Lançamento</span>
+                </div>
             </a>
             <h2>Brinco de planeta</h2>
             <h3>R$99,90</h3>
-            <p>Brincos na cor prata em formato de planeta com pedra com de rosa.</p>
         </div>
         <div class="grid-item">
             <div class="container">
@@ -148,7 +176,6 @@
             </div>
             <h2>Brinco de laço</h2>
             <h3>R$79,90</h3>
-            <p>Brincos na cor prata em formato de laços com pedra com de rosa.</p>
         </div>
         <div class="grid-item">
             <div class="container">
@@ -157,7 +184,6 @@
             </div>
             <h2>Brinco coração</h2>
             <h3>R$110,00</h3>
-            <p>Brincos na cor prata em formato de coração com pedra com de rosa.</p>
         </div>
         <div class="grid-item">
             <div class="container">
@@ -166,7 +192,6 @@
             </div>
             <h2>Anel anjo</h2>
             <h3>R$160,00</h3>
-            <p>Anel em prata com asas de anjo e pedra com de rosa.</p>
         </div>
         <div class="grid-item">
             <div class="container">
@@ -175,7 +200,6 @@
             </div>
             <h2>Colar de coração</h2>
             <h3>R$190,90</h3>
-            <p>Colar em prata com pingente de coração cor de rosa.</p>
         </div>
     </div>
     <div id="descontos" class="espaco-menor"></div>
@@ -193,8 +217,6 @@
             <h2>Doce Encanto</h2>
             <h1 class="desconto">R$200,00</h1>
             <h3>R$160,00</h3>
-            <p>Anel em prata, adornado com um grande diamante rosa, que irradia sofisticação e
-                elegância. </p>
         </div>
         <div class="grid-item">
             <div class="container">
@@ -204,8 +226,6 @@
             <h2>Brilho Rosa Sereno</h2>
             <h1 class="desconto">R$180,00</h1>
             <h3>R$144,00</h3>
-            <p>Colar em prata, realçado por um delicado diamante rosa. Uma peça clássica e
-                encantadora. </p>
         </div>
         <div class="grid-item">
             <div class="container">
@@ -215,8 +235,6 @@
             <h2>Rosa do Crepúsculo</h2>
             <h1 class="desconto">R$150,00</h1>
             <h3>R$120,00</h3>
-            <p>Pulseira em prata, embelezada com pedras rosa na tonalidade crepúsculo, que transmitem
-                suavidade e mistério. </p>
         </div>
         <div class="grid-item">
             <div class="container">

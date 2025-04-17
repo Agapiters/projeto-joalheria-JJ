@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
-*{
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&quot&quot";
+* {
     font-family: 'Poppins', sans-serif;
-    font-optical-sizing: auto;
     text-align: center;
 }
 body{
@@ -33,9 +32,12 @@ body{
 .form-box form{
     margin: 20px 0;
 }
+
 #endereco {
     width: 100%;
+    font-weight: bold;
     height: 48px;
+    opacity: 90%;
     background: #cf8ea0;
     border-radius: 20px;
     outline: none;

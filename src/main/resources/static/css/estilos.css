@@ -11,12 +11,12 @@ body {
 
 .espaco {
   width: 100%;
-  height: 8rem;
+  height: 6.5rem;
 }
 
 .espaco-menor {
   width: 100%;
-  height: 7rem;
+  height: 5rem;
 }
 
 
@@ -165,6 +165,10 @@ form .pesquisar:focus::placeholder {
 }
 /* mobile */
 
+.cabecalho{
+  width: 100%;
+}
+
 .nav-mobile {
   display: flex;
   justify-content: space-between;
@@ -177,12 +181,14 @@ form .pesquisar:focus::placeholder {
   background-color: #ebb3c3;
   z-index: 1000;
   padding: 0 15px;
+  box-shadow: 0 4px 8px rgba(122, 122, 122, 0.1);
 
 }
 
 .logo-mobile {
   display: block;
-  margin: 0 auto;
+  margin: auto;
+  margin-left: 36%;
   width: 80px;
 
 }
@@ -438,7 +444,7 @@ form .pesquisar:focus::placeholder {
 
 @media (max-width: 767px) {
   .catalogo {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -473,7 +479,7 @@ form .pesquisar:focus::placeholder {
   color: #ca8e9e;
   margin-top: 10px;
   font-weight: bold;
-  font-size: x-large;
+  font-size: 140%;
   text-align: left;
 }
 
@@ -488,13 +494,6 @@ form .pesquisar:focus::placeholder {
   text-align: left;
   font-size: 15px;
   text-decoration: line-through 2px;
-}
-
-.grid-item p {
-  margin-top: 10px;
-  font-size: 17px;
-  color: #555;
-  text-align: left;
 }
 
 .tag{
