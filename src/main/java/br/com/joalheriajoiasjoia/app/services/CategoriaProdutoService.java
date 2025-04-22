@@ -15,23 +15,18 @@ public class CategoriaProdutoService {
     @Autowired
     private CategoriaProdutoRepository categoriaProdutoRepository;
 
-    // Salvar ou atualizar uma CategoriaProduto
     public CategoriaProduto saveCategoriaProduto(CategoriaProduto categoriaProduto) {
         return categoriaProdutoRepository.save(categoriaProduto);
     }
 
-    // Obter todas as CategoriaProduto
     public List<CategoriaProduto> getAllCategoriaProdutos() {
         return categoriaProdutoRepository.findAll();
     }
 
-    // Obter uma CategoriaProduto pelo ID
     public CategoriaProduto getCategoriaProdutoById(Long id) {
-        Optional<CategoriaProduto> categoriaProduto = categoriaProdutoRepository.findById(id);
-        return categoriaProduto.orElseThrow(() -> new RuntimeException("CategoriaProduto não encontrada"));
+        return categoriaProdutoRepository.findById(id).orElse(null);   
     }
 
-    // Deletar uma CategoriaProduto por ID
     public void deleteCategoria(Long id) {
         categoriaProdutoRepository.deleteById(id);
     }

@@ -13,6 +13,10 @@ public class TipoUsuarioService {
 
     @Autowired
     private TipoUsuarioRepository tipoUsuarioRepository;
+    
+    public TipoUsuario saveTipoUsuario(TipoUsuario tipoUsuario) {
+    	return tipoUsuarioRepository.save(tipoUsuario);
+    }
 
     public List<TipoUsuario> listarTodos() {
         return tipoUsuarioRepository.findAll();

@@ -1,39 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
-	const form = document.getElementById("cadastroClienteForm");
+    const form = document.getElementById("cadastroUsuarioForm");
 
-	form.addEventListener("submit", async (event) => {
-		event.preventDefault();
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
 
-		const nomeCliente = document.getElementById("nome").value;
-		const cpf = document.getElementById("cpf").value;
-		const email = document.getElementById("email").value;
-		const telefone = document.getElementById("telefone").value;
-		const dt_nascimento = document.getElementById("dt_Nascimento").value;
-		const senha = document.getElementById("senha").value;
+        const nomeUsuario = document.getElementById("nomeUsuario").value;
+        const cpf = document.getElementById("cpf").value;
+        const email = document.getElementById("email").value;
+        const telefone = document.getElementById("telefone").value;
+        const dtNascimento = document.getElementById("dtNascimento").value;
 
-		try {
-			const response = await fetch("http://localhost:8080/cadastrocliente", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json"
-				},
-				body:JSON.stringify({
-					nomeCliente,
-					cpf,
-					email,
-					telefone,
-					dt_nascimento,
-					senha
-				}),
-			});
+        try {
+            const response = await fetch("http://localhost:8080/cadastrousuario", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body:JSON.stringify({
+                    nomeUsuario,
+                    cpf,
+                    email,
+                    telefone,
+                    dtNascimento
+                }),
+            });
 
-			if (response.ok) {
-				window.location.href = "enviado.html";
-			} else {
-				alert("Falha ao cadastrar cliente");
-			}
-		} catch (error) {
-			console.error("Erro ao cadastrar cliente: ", error);
-		}
-	});
+            if (response.ok) {
+                window.location.href = "enviado.html";
+            } else {
+                alert("Falha ao cadastrar cliente");
+            }
+        } catch (error) {
+            console.error("Erro ao cadastrar cliente: ", error);
+        }
+    });
 });

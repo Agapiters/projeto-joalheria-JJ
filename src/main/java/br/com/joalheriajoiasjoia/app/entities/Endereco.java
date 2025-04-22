@@ -19,10 +19,10 @@ public class Endereco {
 	@Column(name = "cep", nullable = false)
 	private String cep;
 
-	@Column(name = "nome_rua", nullable = false)
+	@Column(name = "nomeRua", nullable = false)
 	private String nomeRua;
 
-	@Column(name = "numero_casa", nullable = false)
+	@Column(name = "numeroCasa", nullable = false)
 	private String numeroCasa;
 
 	@Column(name = "bairro", nullable = false)

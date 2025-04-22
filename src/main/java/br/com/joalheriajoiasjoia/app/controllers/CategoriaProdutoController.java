@@ -16,37 +16,32 @@ import br.com.joalheriajoiasjoia.app.entities.CategoriaProduto;
 import br.com.joalheriajoiasjoia.app.services.CategoriaProdutoService;
 
 @RestController
-@RequestMapping("/categoriaProduto")
+@RequestMapping("/categoriaproduto")
 public class CategoriaProdutoController {
 
     @Autowired
     private CategoriaProdutoService categoriaProdutoService;
 
-    // Criar uma nova CategoriaProduto
     @PostMapping
     public CategoriaProduto createCategoria(@RequestBody CategoriaProduto categoriaProduto) {
         return categoriaProdutoService.saveCategoriaProduto(categoriaProduto);
     }
 
-    // Obter todas as CategoriaProduto
     @GetMapping
     public List<CategoriaProduto> getAllCategoriaProdutos() {
         return categoriaProdutoService.getAllCategoriaProdutos();
     }
 
-    // Obter uma CategoriaProduto específica por ID
     @GetMapping("/{id}")
     public CategoriaProduto getCategoriaProduto(@PathVariable Long id) {
         return categoriaProdutoService.getCategoriaProdutoById(id);
     }
 
-    // Editar uma CategoriaProduto existente
     @PutMapping
     public CategoriaProduto editCategoriaProduto(@RequestBody CategoriaProduto categoriaProduto) {
         return categoriaProdutoService.saveCategoriaProduto(categoriaProduto);
     }
-
-    // Deletar uma CategoriaProduto por ID
+    
     @DeleteMapping("/{id}")
     public void deleteCategoria(@PathVariable Long id) {
         categoriaProdutoService.deleteCategoria(id);

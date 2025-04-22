@@ -10,34 +10,34 @@ public class TipoUsuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_tipo_usuario", nullable = false)
-    private long id_tipo_usuario;
+    private long idTipoUsuario;
 
     @Column(name = "nome_tipo_usuario", nullable = false)
-    private String nome_tipo_usuario;
+    private String nomeTipoUsuario;
 
     // Construtores
     public TipoUsuario() {
     }
 
-    public TipoUsuario(long id_tipo_usuario, String nome_tipo_usuario) {
-        this.id_tipo_usuario = id_tipo_usuario;
-        this.nome_tipo_usuario = nome_tipo_usuario;
+    public TipoUsuario(long idTipoUsuario, String nomeTipoUsuario) {
+        this.idTipoUsuario = idTipoUsuario;
+        this.nomeTipoUsuario = nomeTipoUsuario;
     }
 
     // Getters e Setters
-    public long getId_tipo_usuario() {
-        return id_tipo_usuario;
+    public long getIdTipoUsuario() {
+        return idTipoUsuario;
     }
 
-    public void setId_tipo_usuario(long id_tipo_usuario) {
-        this.id_tipo_usuario = id_tipo_usuario;
+    public void setIdTipoUsuario(long idTipoUsuario) {
+        this.idTipoUsuario = idTipoUsuario;
     }
 
-    public String getNome_tipo_usuario() {
-        return nome_tipo_usuario;
+    public String getNomeTipoUsuario() {
+        return nomeTipoUsuario;
     }
 
-    public void setNome_tipo_usuario(String nome_tipo_usuario) {
-        this.nome_tipo_usuario = nome_tipo_usuario;
+    public void setNomeTipoUsuario(String nomeTipoUsuario) {
+        this.nomeTipoUsuario = nomeTipoUsuario;
     }
 }

@@ -13,7 +13,7 @@ document.getElementById("cep").addEventListener("input", async function() {
 				alert("CEP não encontrado."); 
 				return;
 			}
-			document.getElementById("rua").value = dados.logradouro;
+			document.getElementById("nomeRua").value = dados.logradouro;
 			document.getElementById("bairro").value = dados.bairro;
 			document.getElementById("cidade").value = dados.localidade;
 			document.getElementById("estado").value = dados.uf;
@@ -29,23 +29,23 @@ document.addEventListener("DOMContentLoaded", () => {
 		event.preventDefault();
 
 		const cep = document.getElementById("cep").value;
-		const rua = document.getElementById("rua").value;
-		const numCasa = document.getElementById("numero").value;
+		const nomeRua = document.getElementById("nomeRua").value;
+		const numeroCasa = document.getElementById("numeroCasa").value;
 		const cidade = document.getElementById("cidade").value;
 		const estado = document.getElementById("estado").value;
 		const comp = document.getElementById("comp").value;
 		const bairro = document.getElementById("bairro").value;
 
 		try {
-			const response = await fetch("http://localhost:8080/enderecoCliente", {
+			const response = await fetch("http://localhost:8080/cadastroendereco", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json"
 				},
 				body:JSON.stringify({
 					cep,
-					rua,
-					numCasa,
+					nomeRua,
+					numeroCasa,
 					cidade,
 					estado,
 					comp,
