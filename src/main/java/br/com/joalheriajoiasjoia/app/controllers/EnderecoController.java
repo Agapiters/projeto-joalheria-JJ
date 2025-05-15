@@ -16,7 +16,7 @@ public class EnderecoController {
     @Autowired
     private EnderecoService enderecoService;
 
-    // Criar um novo endereço
+    // Criar um novo endereço teste
     @PostMapping
     public Endereco salvarEndereco(@RequestBody Endereco endereco) {
         return enderecoService.salvar(endereco);
