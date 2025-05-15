@@ -16,35 +16,56 @@ import br.com.joalheriajoiasjoia.app.entities.Usuario;
 import br.com.joalheriajoiasjoia.app.services.UsuarioService;
 
 @RestController
-@RequestMapping("/cadastrousuario")
+@RequestMapping("/api/usuarios")
 public class UsuarioController {
 
-	@Autowired
-	private UsuarioService usuarioService;
+    @Autowired
+    private UsuarioService usuarioService;
 
-	@PostMapping
-	public Usuario createCliente(@RequestBody Usuario usuario) {
-		return usuarioService.saveUsuario(usuario);
-	}
+    // Criar um novo usuário
+    @PostMapping
+    public Usuario salvar(@RequestBody Usuario usuario) {
+        return usuarioService.salvar(usuario);
+    }
 
-	@GetMapping
-	public List<Usuario> getAllUsuario() {
-		return usuarioService.getAllUsuarios();
-	}
+    // Buscar um usuário pelo ID
+    @GetMapping("/{id}")
+    public Usuario buscarPorId(@PathVariable Long id) {
+        return usuarioService.buscarPorId(id);
+    }
 
-	@GetMapping("/{id}")
-	public Usuario getUsuario(@PathVariable Long id) {
-		return usuarioService.getUsuarioById(id);
-	}
+    // Atualizar um usuário
+    @PutMapping("/{id}")
+    public Usuario atualizar(@PathVariable Long id, @RequestBody Usuario usuarioAtualizado) {
+        return usuarioService.atualizar(id, usuarioAtualizado);
+    }
 
-	@PutMapping
-	public Usuario editUsuario(@RequestBody Usuario usuario) {
-		return usuarioService.saveUsuario(usuario);
-	}
+    // Excluir um usuário
+    @DeleteMapping("/{id}")
+    public boolean excluir(@PathVariable Long id) {
+        return usuarioService.excluir(id);
+    }
 
-	@DeleteMapping("/{id}")
-	public void deleteCliente(@PathVariable Long id) {
-		usuarioService.deleteUsuario(id);
-	}
+    // Listar todos os usuários
+    @GetMapping
+    public List<Usuario> listarTodos() {
+        return usuarioService.listarTodos();
+    }
 
+    // Buscar usuário por email
+    @GetMapping("/email/{email}")
+    public Usuario buscarPorEmail(@PathVariable String email) {
+        return usuarioService.buscarPorEmail(email);
+    }
+
+    // Método de login
+    @PostMapping("/login")
+    public Usuario login(@RequestBody Usuario loginRequest) {
+        Usuario usuario = usuarioService.autenticarUsuario(loginRequest.getEmail(), loginRequest.getSenha());
+
+        if (usuario != null) {
+            return usuario;
+        }
+        return null;
+    }
 }

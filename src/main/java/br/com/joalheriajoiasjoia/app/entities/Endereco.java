@@ -1,115 +1,118 @@
 package br.com.joalheriajoiasjoia.app.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "tb_endereco")
 public class Endereco {
-	// Atributos
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_endereco", nullable = false)
-	private Long idEndereco;
-	
-	@Column(name = "cep", nullable = false)
-	private String cep;
 
-	@Column(name = "nomeRua", nullable = false)
-	private String nomeRua;
+    // Atributos
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_endereco", nullable = false)
+    private Long idEndereco;
 
-	@Column(name = "numeroCasa", nullable = false)
-	private String numeroCasa;
+    @Column(name = "cep", nullable = false)
+    private String cep;
 
-	@Column(name = "bairro", nullable = false)
-	private String bairro;
+    @Column(name = "nomeRua", nullable = false)
+    private String nomeRua;
 
-	@Column(name = "cidade", nullable = false)
-	private String cidade;
+    @Column(name = "numeroCasa", nullable = false)
+    private String numeroCasa;
 
-	@Column(name = "estado", unique = false)
-	private String estado;
-	
-	//Construtores
-	public Endereco() {
-		
-	}
+    @Column(name = "bairro", nullable = false)
+    private String bairro;
 
-	public Endereco(Long idEndereco, String cep, String nomeRua, String numeroCasa, String bairro, String cidade,
-			String estado) {
-		this.idEndereco = idEndereco;
-		this.cep = cep;
-		this.nomeRua = nomeRua;
-		this.numeroCasa = numeroCasa;
-		this.bairro = bairro;
-		this.cidade = cidade;
-		this.estado = estado;
-	}
-	
-	//GettersSetters
+    @Column(name = "cidade", nullable = false)
+    private String cidade;
 
-	public Long getIdEndereco() {
-		return idEndereco;
-	}
+    @Column(name = "estado", unique = false)
+    private String estado;
 
-	public void setIdEndereco(Long idEndereco) {
-		this.idEndereco = idEndereco;
-	}
+    // Relacionamento ManyToOne com a entidade Usuario
+    @ManyToOne
+    @JoinColumn(name = "usuario_id", nullable = false)
+    private Usuario usuario;
 
-	public String getCep() {
-		return cep;
-	}
+    // Construtores
+    public Endereco() {
+    }
 
-	public void setCep(String cep) {
-		this.cep = cep;
-	}
+    public Endereco(Long idEndereco, String cep, String nomeRua, String numeroCasa, String bairro, String cidade,
+                    String estado, Usuario usuario) {
+        this.idEndereco = idEndereco;
+        this.cep = cep;
+        this.nomeRua = nomeRua;
+        this.numeroCasa = numeroCasa;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.usuario = usuario;
+    }
 
-	public String getNomeRua() {
-		return nomeRua;
-	}
+    // Getters e Setters
+    public Long getIdEndereco() {
+        return idEndereco;
+    }
 
-	public void setNomeRua(String nomeRua) {
-		this.nomeRua = nomeRua;
-	}
+    public void setIdEndereco(Long idEndereco) {
+        this.idEndereco = idEndereco;
+    }
 
-	public String getNumeroCasa() {
-		return numeroCasa;
-	}
+    public String getCep() {
+        return cep;
+    }
 
-	public void setNumeroCasa(String numeroCasa) {
-		this.numeroCasa = numeroCasa;
-	}
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
 
-	public String getBairro() {
-		return bairro;
-	}
+    public String getNomeRua() {
+        return nomeRua;
+    }
 
-	public void setBairro(String bairro) {
-		this.bairro = bairro;
-	}
+    public void setNomeRua(String nomeRua) {
+        this.nomeRua = nomeRua;
+    }
 
-	public String getCidade() {
-		return cidade;
-	}
+    public String getNumeroCasa() {
+        return numeroCasa;
+    }
 
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
-	}
+    public void setNumeroCasa(String numeroCasa) {
+        this.numeroCasa = numeroCasa;
+    }
 
-	public String getEstado() {
-		return estado;
-	}
+    public String getBairro() {
+        return bairro;
+    }
 
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
-	
-	
-	
-	
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
 
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 }

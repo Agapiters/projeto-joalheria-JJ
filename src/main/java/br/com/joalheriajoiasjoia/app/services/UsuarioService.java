@@ -1,6 +1,7 @@
 package br.com.joalheriajoiasjoia.app.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,23 +12,56 @@ import br.com.joalheriajoiasjoia.app.repositories.UsuarioRepository;
 @Service
 public class UsuarioService {
 
-	@Autowired
-	private UsuarioRepository UsuarioRepository;
+    @Autowired
+    private UsuarioRepository usuarioRepository;
 
-	public Usuario saveUsuario(Usuario usuario) {
-		return UsuarioRepository.save(usuario);
-	}
+    // Criar um novo usuário
+    public Usuario salvar(Usuario usuario) {
+        return usuarioRepository.save(usuario);
+    }
 
-	public List<Usuario> getAllUsuarios() {
-		return UsuarioRepository.findAll();
-	}
+    // Buscar um usuário pelo ID
+    public Usuario buscarPorId(Long id) {
+        Optional<Usuario> usuario = usuarioRepository.findById(id);
+        return usuario.orElse(null); // Retorna null se o usuário não for encontrado
+    }
 
-	public Usuario getUsuarioById(Long id) {
-		return UsuarioRepository.findById(id).orElse(null);
-	}
+    // Atualizar os dados de um usuário
+    public Usuario atualizar(Long id, Usuario usuarioAtualizado) {
+        if (usuarioRepository.existsById(id)) {
+            usuarioAtualizado.setIdUsuario(id);
+            return usuarioRepository.save(usuarioAtualizado);
+        }
+        return null; // Retorna null se o usuário não for encontrado
+    }
 
-	public void deleteUsuario(Long id) {
-		UsuarioRepository.deleteById(id);
-	}
+    // Excluir um usuário
+    public boolean excluir(Long id) {
+        if (usuarioRepository.existsById(id)) {
+            usuarioRepository.deleteById(id);
+            return true;
+        }
+        return false; // Retorna false se o usuário não for encontrado
+    }
 
+    // Listar todos os usuários
+    public List<Usuario> listarTodos() {
+        return usuarioRepository.findAll();
+    }
+
+    // Buscar um usuário por email
+    public Usuario buscarPorEmail(String email) {
+        return usuarioRepository.findByEmail(email);
+    }
+
+    // Autenticar usuário por email e senha
+    public Usuario autenticarUsuario(String email, String senha) {
+        Usuario usuario = usuarioRepository.findByEmail(email);
+
+        // Verifica se o usuário existe e se a senha está correta
+        if (usuario != null && usuario.getSenha().equals(senha)) {
+            return usuario;
+        }
+        return null;
+    }
 }
