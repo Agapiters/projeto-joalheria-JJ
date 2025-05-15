@@ -36,9 +36,9 @@ public class Usuario {
     @Column(name = "email", nullable = false, unique = true, length = 50)
     private String email;
 
-    @ManyToOne
+    /* @ManyToOne
     @JoinColumn(name = "tipoUsuario", nullable = false)
-    private TipoUsuario tipoUsuario;
+    private TipoUsuario tipoUsuario; */
 
     @Column(name = "senha")
     private String senha;
@@ -52,14 +52,13 @@ public class Usuario {
 
     // Construtor com parâmetros
     public Usuario(Long idUsuario, String nomeUsuario, String cpf, String telefone, LocalDate dtNascimento,
-                   String email, TipoUsuario tipoUsuario, String senha, List<Endereco> enderecos) {
+                   String email, String senha, List<Endereco> enderecos) {
         this.idUsuario = idUsuario;
         this.nomeUsuario = nomeUsuario;
         this.cpf = cpf;
         this.telefone = telefone;
         this.dtNascimento = dtNascimento;
         this.email = email;
-        this.tipoUsuario = tipoUsuario;
         this.senha = senha;
         this.enderecos = enderecos;
     }
@@ -111,14 +110,6 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public TipoUsuario getTipoUsuario() {
-        return tipoUsuario;
-    }
-
-    public void setTipoUsuario(TipoUsuario tipoUsuario) {
-        this.tipoUsuario = tipoUsuario;
     }
 
     public String getSenha() {

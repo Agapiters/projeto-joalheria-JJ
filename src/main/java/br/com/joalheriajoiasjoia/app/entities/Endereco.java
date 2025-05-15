@@ -29,10 +29,14 @@ public class Endereco {
 
     @Column(name = "estado", unique = false)
     private String estado;
+    
+    @Column(name = "comp", unique = false)
+    private String comp;
+
 
     // Relacionamento ManyToOne com a entidade Usuario
     @ManyToOne
-    @JoinColumn(name = "usuario_id", nullable = false)
+    @JoinColumn(name = "IdUsuario", nullable = false)
     private Usuario usuario;
 
     // Construtores
@@ -40,7 +44,7 @@ public class Endereco {
     }
 
     public Endereco(Long idEndereco, String cep, String nomeRua, String numeroCasa, String bairro, String cidade,
-                    String estado, Usuario usuario) {
+                    String estado, Usuario usuario, String comp) {
         this.idEndereco = idEndereco;
         this.cep = cep;
         this.nomeRua = nomeRua;
@@ -49,6 +53,7 @@ public class Endereco {
         this.cidade = cidade;
         this.estado = estado;
         this.usuario = usuario;
+        this.comp = comp;
     }
 
     // Getters e Setters
@@ -114,5 +119,13 @@ public class Endereco {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+    
+    public String getComp() {
+        return comp;
+    }
+
+    public void setComp(String comp) {
+        this.comp = comp;
     }
 }

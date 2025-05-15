@@ -1,64 +1,83 @@
-document.getElementById("cep").addEventListener("input", async function() {
-	const cep = this.value.replace(/\D/g, "");
 
-	if(cep.length === 8){
-		try {
-			const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-			
-			if(!response.ok) throw new Error("Erro ao buscar CEP");
-			
-			const dados = await response.json();
-			
-			if (dados.erro) {
-				alert("CEP não encontrado."); 
-				return;
-			}
-			document.getElementById("nomeRua").value = dados.logradouro;
-			document.getElementById("bairro").value = dados.bairro;
-			document.getElementById("cidade").value = dados.localidade;
-			document.getElementById("estado").value = dados.uf;
-		} catch (error) {
-			alert("Erro ao buscar endereço: " + error.message);
-		}
-	}
-});
-document.addEventListener("DOMContentLoaded", () => {
-	const form = document.getElementById("cadastroEnderecoForm");
+document.getElementById("cep").addEventListener("DOMContentLoaded", function() {
+	const form = document.getElementById("formCadastroEndereco");
 
-	form.addEventListener("submit", async (event) => {
-		event.preventDefault();
+    // Busca o ID da pessoa armazenado
+    const idUsuario = localStorage.getItem('idUsuario');
 
-		const cep = document.getElementById("cep").value;
-		const nomeRua = document.getElementById("nomeRua").value;
-		const numeroCasa = document.getElementById("numeroCasa").value;
-		const cidade = document.getElementById("cidade").value;
-		const estado = document.getElementById("estado").value;
-		const comp = document.getElementById("comp").value;
-		const bairro = document.getElementById("bairro").value;
+    if (!idUsuario) {
+        alert("Usuário não encontrada. Por favor, cadastre-se primeiro.");
+        window.location.href = "cadastro.html";
+        return;
+    }
 
-		try {
-			const response = await fetch("http://localhost:8080/cadastroendereco", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json"
-				},
-				body:JSON.stringify({
-					cep,
-					nomeRua,
-					numeroCasa,
-					cidade,
-					estado,
-					comp,
-					bairro
-				}),
-			});
-			if (response.ok) {
-				window.location.href = "enviado2.html";
-			} else {
-				alert("Falha ao cadastrar endereço");
-			}
-		} catch (error) {
-			console.error("Erro ao cadastrar endereço: ", error);
-		}
-	});
+    // Evento de envio do formulário
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        // Coleta os dados do formulário
+        const nomeRua = document.getElementById("nomeRua").value;
+        const numeroCasa = document.getElementById("numeroCasa").value;
+        const cidade = document.getElementById("cidade").value;
+        const estado = document.getElementById("estado").value;
+        const cep = document.getElementById("cep").value;
+		const comp = document.getElementById("c").value;
+
+        // Faz o POST para o backend
+        fetch(`http://localhost:8080/api/enderecos`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeRua,
+                numeroCasa,
+                cidade,
+                estado,
+                cep,
+				comp,
+                pessoa: {
+                    idUsuario
+                }
+            })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Erro ao cadastrar endereço.");
+            }
+            return response.json();
+        })
+        .then(data => {
+            alert("Cadastro de endereço realizado com sucesso!");
+            localStorage.removeItem('pessoaId'); // Limpa o ID da pessoa
+            window.location.href = "index.html"; // Redireciona para a página principal
+        })
+        .catch(error => {
+            console.error("Erro:", error);
+            alert("Erro ao cadastrar endereço. Tente novamente.");
+        });
+    });
+
+    // Função para buscar o endereço automaticamente pelo CEP
+    document.getElementById("cep").addEventListener("blur", function() {
+        const cep = this.value.replace(/\D/g, '');
+
+        if (cep.length === 8) {
+            fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                .then(response => response.json())
+                .then(data => {
+                    if (!data.erro) {
+						document.getElementById("nomeRua").value = dados.logradouro;
+						document.getElementById("bairro").value = dados.bairro;
+						document.getElementById("cidade").value = dados.localidade;
+						document.getElementById("estado").value = dados.uf;
+                    } else {
+                        alert("CEP não encontrado.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Erro ao buscar CEP:", error);
+                });
+        }
+    });
 });
