@@ -12,25 +12,25 @@ public class Endereco {
     @Column(name = "id_endereco", nullable = false)
     private Long idEndereco;
 
-    @Column(name = "cep", nullable = false)
+    @Column(name = "cep")
     private String cep;
 
-    @Column(name = "nomeRua", nullable = false)
+    @Column(name = "nomeRua")
     private String nomeRua;
 
-    @Column(name = "numeroCasa", nullable = false)
+    @Column(name = "numeroCasa")
     private String numeroCasa;
 
-    @Column(name = "bairro", nullable = false)
+    @Column(name = "bairro")
     private String bairro;
 
-    @Column(name = "cidade", nullable = false)
+    @Column(name = "cidade")
     private String cidade;
 
-    @Column(name = "estado", unique = false)
+    @Column(name = "estado")
     private String estado;
     
-    @Column(name = "comp", unique = false)
+    @Column(name = "comp")
     private String comp;
 
 
