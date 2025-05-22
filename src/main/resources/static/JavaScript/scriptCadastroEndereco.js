@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 nomeRua,
                 numeroCasa,
                 cidade,
-				bairro,
+		bairro,
                 estado,
                 cep,
                 comp,
