@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 estado,
                 cep,
                 comp,
-                pessoa: {
+                usuario: {
                     idUsuario
                 }
             })

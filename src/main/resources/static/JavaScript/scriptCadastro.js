@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", function() {
 				cpf,
 				dtNascimento,
 				senha,
+				tipoUsuario: {
+					idTipoUsuario: 2
+				}
 			})
 		})
 			.then(response => {

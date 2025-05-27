@@ -3,6 +3,8 @@ package br.com.joalheriajoiasjoia.app.entities;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,7 +29,7 @@ public class Usuario {
     @Column(name = "cpf", nullable = false, length = 11, unique = true)
     private String cpf;
 
-    @Column(name = "telefone", nullable = false)
+    @Column(name = "telefone", nullable = false, length = 11)
     private String telefone;
 
     @Column(name = "dtNascimento")
@@ -36,15 +38,17 @@ public class Usuario {
     @Column(name = "email", nullable = false, unique = true, length = 50)
     private String email;
 
-    /* @ManyToOne
+    @ManyToOne
+    @JsonBackReference 
     @JoinColumn(name = "tipoUsuario", nullable = false)
-    private TipoUsuario tipoUsuario; */
+    private TipoUsuario tipoUsuario;
 
     @Column(name = "senha")
     private String senha;
 
     @OneToMany(mappedBy = "usuario")
     private List<Endereco> enderecos;
+   
 
     // Construtor padrão
     public Usuario() {
