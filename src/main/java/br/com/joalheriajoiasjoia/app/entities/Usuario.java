@@ -6,6 +6,20 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
+<<<<<<< HEAD
+=======
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+
+>>>>>>> 8fc1f56af18e6d674e47e22a6715d23bf7d46564
 @Entity
 public class Usuario {
 
@@ -20,7 +34,7 @@ public class Usuario {
     @Column(name = "cpf", nullable = false, length = 11, unique = true)
     private String cpf;
 
-    @Column(name = "telefone", nullable = false)
+    @Column(name = "telefone", nullable = false, length = 11)
     private String telefone;
 
     @Column(name = "dtNascimento")
@@ -39,18 +53,18 @@ public class Usuario {
 
     @OneToMany(mappedBy = "usuario")
     private List<Endereco> enderecos;
+   
 
     public Usuario() {}
 
     public Usuario(Long idUsuario, String nomeUsuario, String cpf, String telefone, LocalDate dtNascimento,
-                   String email, TipoUsuario tipoUsuario, String senha, List<Endereco> enderecos) {
+                   String email, String senha, List<Endereco> enderecos) {
         this.idUsuario = idUsuario;
         this.nomeUsuario = nomeUsuario;
         this.cpf = cpf;
         this.telefone = telefone;
         this.dtNascimento = dtNascimento;
         this.email = email;
-        this.tipoUsuario = tipoUsuario;
         this.senha = senha;
         this.enderecos = enderecos;
     }
@@ -102,14 +116,6 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public TipoUsuario getTipoUsuario() {
-        return tipoUsuario;
-    }
-
-    public void setTipoUsuario(TipoUsuario tipoUsuario) {
-        this.tipoUsuario = tipoUsuario;
     }
 
     public String getSenha() {

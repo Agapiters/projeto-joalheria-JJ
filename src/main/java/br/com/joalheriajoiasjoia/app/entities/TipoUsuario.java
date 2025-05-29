@@ -16,9 +16,16 @@ public class TipoUsuario {
     @Column(name = "nome_tipo_usuario", nullable = false)
     private String nomeTipoUsuario;
 
+<<<<<<< HEAD
     @OneToMany
     @JsonManagedReference
     private List<Usuario> usuarios;
+=======
+    
+    @OneToMany(mappedBy = "tipoUsuario")
+    @JsonManagedReference
+    private List<Usuario> usuario;
+>>>>>>> 8fc1f56af18e6d674e47e22a6715d23bf7d46564
 
     public TipoUsuario() {}
 
@@ -44,6 +51,7 @@ public class TipoUsuario {
     }
 
     public List<Usuario> getUsuarios() {
+<<<<<<< HEAD
         return usuarios;
     }
 
@@ -51,3 +59,12 @@ public class TipoUsuario {
         this.usuarios = usuarios;
     }
 }
+=======
+        return usuario;
+    }
+
+    public void setUsuarios(List<Usuario> usuario) {
+        this.usuario = usuario;
+    }
+}
+>>>>>>> 8fc1f56af18e6d674e47e22a6715d23bf7d46564

@@ -12,27 +12,31 @@ public class Endereco {
     @Column(name = "id_endereco", nullable = false)
     private Long idEndereco;
 
-    @Column(name = "cep", nullable = false)
+    @Column(name = "cep")
     private String cep;
 
-    @Column(name = "nomeRua", nullable = false)
+    @Column(name = "nomeRua")
     private String nomeRua;
 
-    @Column(name = "numeroCasa", nullable = false)
+    @Column(name = "numeroCasa")
     private String numeroCasa;
 
-    @Column(name = "bairro", nullable = false)
+    @Column(name = "bairro")
     private String bairro;
 
-    @Column(name = "cidade", nullable = false)
+    @Column(name = "cidade")
     private String cidade;
 
-    @Column(name = "estado", unique = false)
+    @Column(name = "estado")
     private String estado;
+    
+    @Column(name = "comp")
+    private String comp;
+
 
     // Relacionamento ManyToOne com a entidade Usuario
     @ManyToOne
-    @JoinColumn(name = "usuario_id", nullable = false)
+    @JoinColumn(name = "IdUsuario", nullable = false)
     private Usuario usuario;
 
     // Construtores
@@ -40,7 +44,7 @@ public class Endereco {
     }
 
     public Endereco(Long idEndereco, String cep, String nomeRua, String numeroCasa, String bairro, String cidade,
-                    String estado, Usuario usuario) {
+                    String estado, Usuario usuario, String comp) {
         this.idEndereco = idEndereco;
         this.cep = cep;
         this.nomeRua = nomeRua;
@@ -49,6 +53,7 @@ public class Endereco {
         this.cidade = cidade;
         this.estado = estado;
         this.usuario = usuario;
+        this.comp = comp;
     }
 
     // Getters e Setters
@@ -114,5 +119,13 @@ public class Endereco {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+    
+    public String getComp() {
+        return comp;
+    }
+
+    public void setComp(String comp) {
+        this.comp = comp;
     }
 }
