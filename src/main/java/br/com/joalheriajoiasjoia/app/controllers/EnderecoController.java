@@ -1,7 +1,6 @@
 package br.com.joalheriajoiasjoia.app.controllers;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +15,7 @@ public class EnderecoController {
     @Autowired
     private EnderecoService enderecoService;
 
-    // Criar um novo endereço teste
+    // Criar um novo endereço
     @PostMapping
     public Endereco salvarEndereco(@RequestBody Endereco endereco) {
         return enderecoService.salvar(endereco);
@@ -30,8 +29,8 @@ public class EnderecoController {
 
     // Buscar endereço por ID
     @GetMapping("/{id}")
-    public Optional<Endereco> buscarEnderecoPorId(@PathVariable Long id) {
-        return enderecoService.buscarPorId(id);
+    public Endereco buscarEnderecoPorId(@PathVariable Long id) {
+        return enderecoService.getEnderecoById(id);
     }
 
     // Atualizar endereço

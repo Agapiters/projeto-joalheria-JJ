@@ -1,21 +1,14 @@
 package br.com.joalheriajoiasjoia.app.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 import java.util.List;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 
 @Entity
 public class Usuario {
 
-    // Atributos
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idUsuario", nullable = false)
@@ -37,6 +30,7 @@ public class Usuario {
     private String email;
 
     @ManyToOne
+    @JsonBackReference 
     @JoinColumn(name = "tipoUsuario", nullable = false)
     private TipoUsuario tipoUsuario;
 
@@ -46,11 +40,8 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario")
     private List<Endereco> enderecos;
 
-    // Construtor padrão
-    public Usuario() {
-    }
+    public Usuario() {}
 
-    // Construtor com parâmetros
     public Usuario(Long idUsuario, String nomeUsuario, String cpf, String telefone, LocalDate dtNascimento,
                    String email, TipoUsuario tipoUsuario, String senha, List<Endereco> enderecos) {
         this.idUsuario = idUsuario;

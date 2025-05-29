@@ -6,7 +6,6 @@ import br.com.joalheriajoiasjoia.app.entities.Ornamentos;
 import br.com.joalheriajoiasjoia.app.repositories.OrnamentosRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class OrnamentosService {
@@ -24,10 +23,9 @@ public class OrnamentosService {
         return ornamentosRepository.findAll();
     }
 
-    // Obter um Ornamento por ID
+    // Obter um Ornamento por ID (sem Optional)
     public Ornamentos getOrnamentoById(Long id) {
-        Optional<Ornamentos> ornamento = ornamentosRepository.findById(id);
-        return ornamento.orElse(null);
+        return ornamentosRepository.findById(id).orElse(null);
     }
 
     // Deletar um Ornamento por ID

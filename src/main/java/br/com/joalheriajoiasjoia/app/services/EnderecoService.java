@@ -1,7 +1,6 @@
 package br.com.joalheriajoiasjoia.app.services;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,18 +24,15 @@ public class EnderecoService {
         return enderecoRepository.findAll();
     }
 
-    // Buscar endereço por ID
-    public Optional<Endereco> buscarPorId(Long id) {
-        return enderecoRepository.findById(id);
+    // Buscar endereço por ID (retorna null se não encontrar)
+    public Endereco getEnderecoById(Long id) {
+        return enderecoRepository.findById(id).orElse(null);
     }
 
     // Atualizar endereço
     public Endereco atualizar(Long id, Endereco enderecoAtualizado) {
-        Optional<Endereco> enderecoExistente = enderecoRepository.findById(id);
-        if (enderecoExistente.isPresent()) {
-            Endereco endereco = enderecoExistente.get();
-
-            // Atualiza os campos necessários
+        Endereco endereco = enderecoRepository.findById(id).orElse(null);
+        if (endereco != null) {
             endereco.setCep(enderecoAtualizado.getCep());
             endereco.setNomeRua(enderecoAtualizado.getNomeRua());
             endereco.setNumeroCasa(enderecoAtualizado.getNumeroCasa());

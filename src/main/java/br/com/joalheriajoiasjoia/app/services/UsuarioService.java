@@ -1,7 +1,6 @@
 package br.com.joalheriajoiasjoia.app.services;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,10 +19,9 @@ public class UsuarioService {
         return usuarioRepository.save(usuario);
     }
 
-    // Buscar um usuário pelo ID
-    public Usuario buscarPorId(Long id) {
-        Optional<Usuario> usuario = usuarioRepository.findById(id);
-        return usuario.orElse(null); // Retorna null se o usuário não for encontrado
+    // Buscar um usuário pelo ID (sem Optional)
+    public Usuario getUsuarioById(Long id) {
+        return usuarioRepository.findById(id).orElse(null);
     }
 
     // Atualizar os dados de um usuário

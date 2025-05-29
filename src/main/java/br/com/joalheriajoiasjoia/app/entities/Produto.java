@@ -1,5 +1,7 @@
 package br.com.joalheriajoiasjoia.app.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -35,6 +37,7 @@ public class Produto {
 	private CategoriaProduto categoriaProduto;
 	
 	@ManyToOne
+	@JsonBackReference
 	@JoinColumn(name = "tipo_produto", nullable = false)
 	private TipoProduto tipoProduto;
 	
