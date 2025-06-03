@@ -1,14 +1,9 @@
 package br.com.joalheriajoiasjoia.app.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import jakarta.persistence.*;
-
 import java.time.LocalDate;
 import java.util.List;
 
-<<<<<<< HEAD
-=======
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,7 +14,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 
->>>>>>> 8fc1f56af18e6d674e47e22a6715d23bf7d46564
 @Entity
 public class Usuario {
 
@@ -44,7 +38,7 @@ public class Usuario {
     private String email;
 
     @ManyToOne
-    @JsonBackReference 
+    @JsonIgnoreProperties 
     @JoinColumn(name = "tipoUsuario", nullable = false)
     private TipoUsuario tipoUsuario;
 
@@ -52,13 +46,14 @@ public class Usuario {
     private String senha;
 
     @OneToMany(mappedBy = "usuario")
+    @JsonIgnoreProperties
     private List<Endereco> enderecos;
    
 
     public Usuario() {}
 
     public Usuario(Long idUsuario, String nomeUsuario, String cpf, String telefone, LocalDate dtNascimento,
-                   String email, String senha, List<Endereco> enderecos) {
+                   String email, String senha, List<Endereco> enderecos, TipoUsuario tipoUsuario ) {
         this.idUsuario = idUsuario;
         this.nomeUsuario = nomeUsuario;
         this.cpf = cpf;
@@ -67,6 +62,7 @@ public class Usuario {
         this.email = email;
         this.senha = senha;
         this.enderecos = enderecos;
+        this.tipoUsuario = tipoUsuario;
     }
 
     // Getters e Setters
@@ -133,4 +129,13 @@ public class Usuario {
     public void setEnderecos(List<Endereco> enderecos) {
         this.enderecos = enderecos;
     }
+    
+    public TipoUsuario getTipoUsuario() {
+        return tipoUsuario;
+    }
+
+    public void setTipoUsuario(TipoUsuario tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
+    }
+ 
 }

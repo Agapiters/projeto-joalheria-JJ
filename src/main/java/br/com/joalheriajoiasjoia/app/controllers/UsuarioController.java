@@ -12,48 +12,57 @@ import br.com.joalheriajoiasjoia.app.services.UsuarioService;
 @RequestMapping("/api/usuarios")
 public class UsuarioController {
 
-    @Autowired
-    private UsuarioService usuarioService;
+	@Autowired
+	private UsuarioService usuarioService;
 
-    // Criar um novo usuário
-    @PostMapping
-    public Usuario salvar(@RequestBody Usuario usuario) {
-        return usuarioService.salvar(usuario);
-    }
+	// Criar um novo usuário
+	@PostMapping
+	public Usuario salvar(@RequestBody Usuario usuario) {
+		return usuarioService.salvar(usuario);
+	}
 
-    // Buscar um usuário pelo ID
-    @GetMapping("/{id}")
-    public Usuario buscarPorId(@PathVariable Long id) {
-        return usuarioService.getUsuarioById(id); // método atualizado no service
-    }
+	// Buscar um usuário pelo ID
+	@GetMapping("/{id}")
+	public Usuario buscarPorId(@PathVariable Long id) {
+		return usuarioService.getUsuarioById(id); // método atualizado no service
+	}
 
-    // Atualizar um usuário
-    @PutMapping("/{id}")
-    public Usuario atualizar(@PathVariable Long id, @RequestBody Usuario usuarioAtualizado) {
-        return usuarioService.atualizar(id, usuarioAtualizado);
-    }
+	// Atualizar um usuário
+	@PutMapping("/{id}")
+	public Usuario atualizar(@PathVariable Long id, @RequestBody Usuario usuarioAtualizado) {
+		return usuarioService.atualizar(id, usuarioAtualizado);
+	}
 
-    // Excluir um usuário
-    @DeleteMapping("/{id}")
-    public boolean excluir(@PathVariable Long id) {
-        return usuarioService.excluir(id);
-    }
+	// Excluir um usuário
+	@DeleteMapping("/{id}")
+	public boolean excluir(@PathVariable Long id) {
+		return usuarioService.excluir(id);
+	}
 
-    // Listar todos os usuários
-    @GetMapping
-    public List<Usuario> listarTodos() {
-        return usuarioService.listarTodos();
-    }
+	// Listar todos os usuários
+	@GetMapping
+	public List<Usuario> listarTodos() {
+		return usuarioService.listarTodos();
+	}
 
-    // Buscar usuário por email
-    @GetMapping("/email/{email}")
-    public Usuario buscarPorEmail(@PathVariable String email) {
-        return usuarioService.buscarPorEmail(email);
-    }
+	// Buscar usuário por email
+	@GetMapping("/email/{email}")
+	public Usuario buscarPorEmail(@PathVariable String email) {
+		return usuarioService.buscarPorEmail(email);
+	}
 
-    // Método de login
-    @PostMapping("/login")
-    public Usuario login(@RequestBody Usuario loginRequest) {
-        return usuarioService.autenticarUsuario(loginRequest.getEmail(), loginRequest.getSenha());
-    }
+	// Método de login
+	@PostMapping("/login")
+	public Usuario login(@RequestBody Usuario loginRequest) {
+		Usuario usuario = usuarioService.autenticarUsuario(loginRequest.getEmail(), loginRequest.getSenha());
+
+		if (usuario != null) {
+
+			return usuario;
+		} else {
+
+			return null;
+		}
+
+	}
 }
