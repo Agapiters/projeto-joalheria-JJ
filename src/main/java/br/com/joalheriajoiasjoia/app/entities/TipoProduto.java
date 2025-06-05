@@ -18,21 +18,19 @@ public class TipoProduto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_tipo_produto", nullable = false)
+    @Column(name = "idTipoProduto", nullable = false)
     private long idTipoProduto;
 
-    @Column(name = "nome_tipo_produto", nullable = false)
+    @Column(name = "nomeTipoProduto", nullable = false)
     private String nomeTipoProduto;
 
-    @Column(name = "descricao_tipo_produto", nullable = false)
+    @Column(name = "descricaoTipoProduto", nullable = false)
     private String descricaoTipoProduto;
     
-    @OneToMany
+    @OneToMany(mappedBy = "tipoProduto")
     @JsonManagedReference
     private List<Produto> produtos;
 
-
-    // Construtores
     public TipoProduto() {
     }
 
@@ -65,5 +63,13 @@ public class TipoProduto {
 
     public void setDescricaoTipoProduto(String descricaoTipoProduto) {
         this.descricaoTipoProduto = descricaoTipoProduto;
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
     }
 }

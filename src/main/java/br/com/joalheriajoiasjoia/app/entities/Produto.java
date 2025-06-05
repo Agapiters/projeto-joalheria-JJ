@@ -17,52 +17,59 @@ public class Produto {
 	// Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_produto", nullable = false)
-	private long id;
+	@Column(name = "idProduto", nullable = false)
+	private long idProduto;
 
-	@Column(name = "nome_produto", nullable = false)
+	@Column(name = "nomeProduto", nullable = false)
 	private String nomeProduto;
 
-	@Column(name = "descricao_produto", nullable = false)
+	@Column(name = "descricao", nullable = false)
 	private String descricao;
 
-	@Column(name = "preco_produto", nullable = false)
-	private double preco;
+	@Column(name = "preco", nullable = false)
+	private String preco;
 
-	@Column(name = "img_produto", nullable = false)
-	private String imgUrl;
+	@Column(name = "img", nullable = false)
+	private String img;
 	
 	@ManyToOne
-	@JoinColumn(name = "categoria_produto", nullable = false)
+	@JsonBackReference
+	@JoinColumn(name = "ornamentoProduto", nullable = false)
+	private Ornamentos ornamentos;
+	
+	@ManyToOne
+	@JsonBackReference
+	@JoinColumn(name = "categoriaProduto", nullable = false)
 	private CategoriaProduto categoriaProduto;
 	
 	@ManyToOne
 	@JsonBackReference
-	@JoinColumn(name = "tipo_produto", nullable = false)
+	@JoinColumn(name = "tipoProduto", nullable = false)
 	private TipoProduto tipoProduto;
 	
 	//Construtores
 	public Produto() {
 	}
 	
-	public Produto(long id, String nomeProduto, String descricao, double preco, String imgUrl,
-			CategoriaProduto categoriaProduto, TipoProduto tipoProduto) {
-		this.id = id;
+	public Produto(long idProduto, String nomeProduto, String descricao, String preco, String img,
+			CategoriaProduto categoriaProduto, TipoProduto tipoProduto, Ornamentos ornamentos) {
+		this.idProduto = idProduto;
 		this.nomeProduto = nomeProduto;
 		this.descricao = descricao;
 		this.preco = preco;
-		this.imgUrl = imgUrl;
+		this.img = img;
 		this.categoriaProduto = categoriaProduto;
 		this.tipoProduto = tipoProduto;
+		this.ornamentos = ornamentos;
 	}
 	
 	//Getters e Setters
-	public long getId() {
-		return id;
+	public long getIdProduto() {
+		return idProduto;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setIdProduto(long idProduto) {
+		this.idProduto = idProduto;
 	}
 
 	public String getNomeProduto() {
@@ -81,20 +88,20 @@ public class Produto {
 		this.descricao = descricao;
 	}
 
-	public double getPreco() {
+	public String getPreco() {
 		return preco;
 	}
 
-	public void setPreco(double preco) {
+	public void setPreco(String preco) {
 		this.preco = preco;
 	}
 
-	public String getImgUrl() {
-		return imgUrl;
+	public String getImg() {
+		return img;
 	}
 
-	public void setImgUrl(String imgUrl) {
-		this.imgUrl = imgUrl;
+	public void setImg(String img) {
+		this.img = img;
 	}
 
 	public CategoriaProduto getCategoriaProduto() {
@@ -112,5 +119,15 @@ public class Produto {
 	public void setTipoProduto(TipoProduto tipoProduto) {
 		this.tipoProduto = tipoProduto;
 	}
+	
+	public Ornamentos getOrnamentos() {
+		return ornamentos;
+	}
+
+	public void setOrnamentos(Ornamentos ornamentos) {
+		this.ornamentos = ornamentos;
+	}
+	
+	
 	
 }

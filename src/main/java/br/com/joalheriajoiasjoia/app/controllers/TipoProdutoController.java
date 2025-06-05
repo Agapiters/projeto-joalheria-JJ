@@ -8,7 +8,7 @@ import br.com.joalheriajoiasjoia.app.services.TipoProdutoService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/tiposProduto")
+@RequestMapping("/tipoproduto")
 public class TipoProdutoController {
 
     @Autowired

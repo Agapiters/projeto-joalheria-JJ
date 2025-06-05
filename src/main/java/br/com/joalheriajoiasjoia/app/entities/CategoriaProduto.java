@@ -10,51 +10,47 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "tb_categoria_produto")
 public class CategoriaProduto {
-	// Atributos
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_categoria_produto", nullable = false)
-	private long id;
 
-	@Column(name = "nome_categoria_produto", nullable = false)
-	private String nomeProduto;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idCategoriaProduto", nullable = false)
+    private long idCategoriaProduto;
 
-	@Column(name = "descricao_categoria_produto", nullable = false)
-	private String descricao;
-	
-	//Construtores
-	public CategoriaProduto() {
+    @Column(name = "nome_categoria_produto", nullable = false)
+    private String nomeCategoriaProduto;
 
-	}
+    @Column(name = "descricao_categoria_produto", nullable = false)
+    private String descricaoCategoria;
 
-	public CategoriaProduto(long id, String nomeProduto, String descricao) {
-		this.id = id;
-		this.nomeProduto = nomeProduto;
-		this.descricao = descricao;
-	}
-	
-	//Getters e Setters
-	public long getId() {
-		return id;
-	}
+    public CategoriaProduto() {}
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public CategoriaProduto(long idCategoriaProduto, String nomeCategoriaProduto, String descricaoCategoria) {
+        this.idCategoriaProduto = idCategoriaProduto;
+        this.nomeCategoriaProduto = nomeCategoriaProduto;
+        this.descricaoCategoria = descricaoCategoria;
+    }
 
-	public String getNomeProduto() {
-		return nomeProduto;
-	}
+    public long getIdCategoriaProduto() {
+        return idCategoriaProduto;
+    }
 
-	public void setNomeProduto(String nomeProduto) {
-		this.nomeProduto = nomeProduto;
-	}
+    public void setIdCategoriaProduto(long idCategoriaProduto) {
+        this.idCategoriaProduto = idCategoriaProduto;
+    }
 
-	public String getDescricao() {
-		return descricao;
-	}
+    public String getNomeCategoriaProduto() {
+        return nomeCategoriaProduto;
+    }
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
+    public void setNomeCategoriaProduto(String nomeCategoriaProduto) {
+        this.nomeCategoriaProduto = nomeCategoriaProduto;
+    }
+
+    public String getDescricaoCategoria() {
+        return descricaoCategoria;
+    }
+
+    public void setDescricaoCategoria(String descricaoCategoria) {
+        this.descricaoCategoria = descricaoCategoria;
+    }
 }

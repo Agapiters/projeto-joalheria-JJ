@@ -17,24 +17,24 @@
             <h1>Cadastro Produto</h1>
             <form class="form" id="cadastroProdutoForm">
                 <div class="inserir">
-                    <label for="nome"> Nome </label>
-                    <input type="text" id="nomeProduto" placeholder="Digite o nome da jóia" required>
+                    <label for="nomeProduto"> Nome </label>
+                    <input type="text" id="nomeProduto" placeholder="Digite o nome da peça" required>
                 </div>
 
                 <div class="inserir">
                     <label for="descricao">Descrição</label>
-                    <input type="text" id="descricao" placeholder="Monte a descrição da joia" required>
+                    <input type="text" id="descricao" placeholder="Monte a descrição da peça" required>
                 </div>
 
                 <div class="inserir">
                     <label for="preco">Preço</label>
-                    <input type="text" id="preco" placeholder="Digite o preço" required>
+                    <input type="number" id="preco" placeholder="Insira o preço" step="0.01" required>
                 </div>
                 <div class="grid">
-                    
+
                     <div class="selecione">
-                        <label for="categoriaProduto">Categoria</label>
-                        <select id="categoriaProduto" class="opcoes" name="categoria" required>
+                        <label for="cadastrar">Categoria</label>
+                        <select id="categoriaProduto" class="opcoes" name="categoriaProduto" required>
                             <option value="">Selecione...</option>
                             <option value="1">Novidade</option>
                             <option value="2">Desconto</option>
@@ -45,20 +45,36 @@
                         </select>
                     </div>
                     <div class="selecione">
-                        <label  for="tipoProduto">Tipo</label>
-                        <select id="tipoProduto" class="opcoes" name="categoria" required>
+                        <label for="tipoProduto">Tipo</label>
+                        <select id="tipoProduto" class="opcoes" name="tipoProduto" required>
                             <option value="">Selecione...</option>
                             <option value="1">Ouro</option>
                             <option value="2">Prata</option>
                         </select>
-                        
+
                     </div>
+
                 </div>
 
-                <label id="img" for="file-upload" class="custom-file-upload">
-                    Envie uma imagem
-                </label>
-                <input id="file-upload" type="file" />
+                <br>
+                <div class="selecione">
+                    <label for="ornamentoProduto">Ornamento</label>
+                    <select id="ornamentoProduto" class="opcoes" name="ornamentoProduto" required>
+                        <option value="">Selecione...</option>
+                        <option value="1">Diamante rosa</option>
+                        <option value="2">Quartzo rosa</option>
+                        <option value="3">Turmalina rosa</option>
+                        <option value="4">Morganita</option>
+                    </select>
+
+                </div>
+                <br>
+                <div class="inserir">
+                    <label for="img">URL da imagem</label>
+                    <input type="url" id="img" placeholder="Insira o URL da imagem" required>
+                </div>
+
+
                 <br>
 
                 <div>

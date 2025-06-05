@@ -9,21 +9,29 @@ document.addEventListener("DOMContentLoaded", () => {
 		const preco = document.getElementById("preco").value;
 		const img = document.getElementById("img").value;
 		const categoriaProduto = document.getElementById("categoriaProduto").value;
-        const tipoProduto = document.getElementById("tipoProduto").value;
+		const tipoProduto = document.getElementById("tipoProduto").value;
+		const ornamentoProduto = document.getElementById("ornamentoProduto").value;
 
 		try {
-			const response = await fetch("http://localhost:8080/cadastrocliente", {
+			const response = await fetch("http://localhost:8080/cadastroproduto", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json"
 				},
-				body:JSON.stringify({
+				body: JSON.stringify({
 					nomeProduto,
 					descricao,
 					preco,
 					img,
-					categoriaProduto,
-                    tipoProduto
+					categoriaProduto: {
+						idCategoriaProduto: categoriaProduto
+					},
+					tipoProduto: {
+						idTipoProduto: tipoProduto
+					},
+					ornamentos: {
+						idOrnamentoProduto: ornamentoProduto
+					}
 				}),
 			});
 

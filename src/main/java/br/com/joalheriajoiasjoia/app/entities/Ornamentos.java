@@ -6,50 +6,47 @@ import jakarta.persistence.*;
 @Table(name = "tb_ornamentos")
 public class Ornamentos {
 
-    // Atributos
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_ornamento", nullable = false)
-    private Long id_ornamento;
+    @Column(name = "idOrnamentos", nullable = false)
+    private Long idOrnamentos;
 
-    @Column(name = "nome_ornamento", nullable = false, length = 100)
-    private String nome;
+    @Column(name = "nomeOrnamento", nullable = false, length = 100)
+    private String nomeOrnamento;
 
-    @Column(name = "descricao_ornamento", length = 255)
-    private String descricao;
+    @Column(name = "descricaoOrnamento", length = 255)
+    private String descricaoOrnamento;
 
-    // Construtores
     public Ornamentos() {
     }
 
-    public Ornamentos(Long id_ornamento, String nome, String descricao) {
-        this.id_ornamento = id_ornamento;
-        this.nome = nome;
-        this.descricao = descricao;
+    public Ornamentos(Long idOrnamentos, String nomeOrnamento, String descricaoOrnamento) {
+        this.idOrnamentos = idOrnamentos;
+        this.nomeOrnamento = nomeOrnamento;
+        this.descricaoOrnamento = descricaoOrnamento;
     }
 
-    // Getters e Setters
-    public Long getId_ornamento() {
-        return id_ornamento;
+    public Long getIdOrnamentos() {
+        return idOrnamentos;
     }
 
-    public void setId_ornamento(Long id_ornamento) {
-        this.id_ornamento = id_ornamento;
+    public void setIdOrnamentos(Long idOrnamentos) {
+        this.idOrnamentos = idOrnamentos;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeOrnamento() {
+        return nomeOrnamento;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomeOrnamento(String nomeOrnamento) {
+        this.nomeOrnamento = nomeOrnamento;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getDescricaoOrnamento() {
+        return descricaoOrnamento;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setDescricaoOrnamento(String descricaoOrnamento) {
+        this.descricaoOrnamento = descricaoOrnamento;
     }
 }
