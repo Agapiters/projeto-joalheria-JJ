@@ -1,9 +1,8 @@
 package br.com.joalheriajoiasjoia.app.entities;
 
 import java.time.LocalDate;
-import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,130 +11,132 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "tb_usuario")
 public class Usuario {
+	// Atributos
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "idUsuario", nullable = false)
+	private Long idUsuario;
+	
+	@Column(name = "nomeUsuario", nullable = false, length = 100)
+	private String nomeUsuario;
+	
+	@Column(name = "cpf", nullable = false, length = 11, unique = true)
+	private String cpf;
+	
+	@Column(name = "telefone", nullable = false,  unique = false)
+	private String telefone;
+	
+	@Column(name = "email", nullable = false, unique = true, length = 50)
+	private String email;
+	
+	@Column(name = "senha", nullable = false, length = 50)
+	private String senha;
+	
+	@Column(name = "data_nascimento", unique = false)
+	private LocalDate dtNascimento;
+	
+	@ManyToOne
+	@JoinColumn(name = "tipo_usuario")
+	@JsonBackReference
+	private TipoUsuario tipoUsuario;
+	
+	@ManyToOne
+	@JoinColumn(name="ENDERECO_id_endereco")
+	private Endereco endereco;
+	
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idUsuario", nullable = false)
-    private Long idUsuario;
+	// Construtores
+	public Usuario() {
 
-    @Column(name = "nomeUsuario", nullable = false, length = 100)
-    private String nomeUsuario;
+	}
 
-    @Column(name = "cpf", nullable = false, length = 11, unique = true)
-    private String cpf;
+	public Usuario(Long idUsuario, String nomeUsuario, String cpf, String telefone, String email, String senha,
+			LocalDate dtNascimento, Endereco endereco) {
+		this.idUsuario = idUsuario;
+		this.nomeUsuario = nomeUsuario;
+		this.cpf = cpf;
+		this.telefone = telefone;
+		this.email = email;
+		this.senha = senha;
+		this.dtNascimento = dtNascimento;
+		this.endereco = endereco;
+	}
 
-    @Column(name = "telefone", nullable = false, length = 11)
-    private String telefone;
+	public Long getIdUsuario() {
+		return idUsuario;
+	}
 
-    @Column(name = "dtNascimento")
-    private LocalDate dtNascimento;
+	public void setIdUsuario(Long idUsuario) {
+		this.idUsuario = idUsuario;
+	}
 
-    @Column(name = "email", nullable = false, unique = true, length = 50)
-    private String email;
+	public String getNomeUsuario() {
+		return nomeUsuario;
+	}
 
-    @ManyToOne
-    @JsonIgnoreProperties 
-    @JoinColumn(name = "tipoUsuario", nullable = false)
-    private TipoUsuario tipoUsuario;
+	public void setNomeUsuario(String nomeUsuario) {
+		this.nomeUsuario = nomeUsuario;
+	}
 
-    @Column(name = "senha")
-    private String senha;
+	public String getCpf() {
+		return cpf;
+	}
 
-    @OneToMany(mappedBy = "usuario")
-    @JsonIgnoreProperties
-    private List<Endereco> enderecos;
-   
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 
-    public Usuario() {}
+	public String getTelefone() {
+		return telefone;
+	}
 
-    public Usuario(Long idUsuario, String nomeUsuario, String cpf, String telefone, LocalDate dtNascimento,
-                   String email, String senha, List<Endereco> enderecos, TipoUsuario tipoUsuario ) {
-        this.idUsuario = idUsuario;
-        this.nomeUsuario = nomeUsuario;
-        this.cpf = cpf;
-        this.telefone = telefone;
-        this.dtNascimento = dtNascimento;
-        this.email = email;
-        this.senha = senha;
-        this.enderecos = enderecos;
-        this.tipoUsuario = tipoUsuario;
-    }
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
 
-    // Getters e Setters
-    public Long getIdUsuario() {
-        return idUsuario;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public void setIdUsuario(Long idUsuario) {
-        this.idUsuario = idUsuario;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public String getNomeUsuario() {
-        return nomeUsuario;
-    }
+	public String getSenha() {
+		return senha;
+	}
 
-    public void setNomeUsuario(String nomeUsuario) {
-        this.nomeUsuario = nomeUsuario;
-    }
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 
-    public String getCpf() {
-        return cpf;
-    }
+	public LocalDate getdtNascimento() {
+		return dtNascimento;
+	}
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
+	public void setdtNascimento(LocalDate dtNascimento) {
+		this.dtNascimento = dtNascimento;
+	}
 
-    public String getTelefone() {
-        return telefone;
-    }
+	public TipoUsuario getTipoUsuario() {
+		return tipoUsuario;
+	}
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
+	public void setTipoUsuario(TipoUsuario tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	}
 
-    public LocalDate getDtNascimento() {
-        return dtNascimento;
-    }
+	public Endereco getEndereco() {
+		return endereco;
+	}
 
-    public void setDtNascimento(LocalDate dtNascimento) {
-        this.dtNascimento = dtNascimento;
-    }
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    public List<Endereco> getEnderecos() {
-        return enderecos;
-    }
-
-    public void setEnderecos(List<Endereco> enderecos) {
-        this.enderecos = enderecos;
-    }
-    
-    public TipoUsuario getTipoUsuario() {
-        return tipoUsuario;
-    }
-
-    public void setTipoUsuario(TipoUsuario tipoUsuario) {
-        this.tipoUsuario = tipoUsuario;
-    }
- 
 }

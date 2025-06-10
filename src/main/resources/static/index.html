@@ -72,9 +72,10 @@
                         </div>
                         <div class="card-footer">
                             <form class="form" role="search">
-                                <input class="pesquisar-mobile" type="search" placeholder="Procurar"
+                                <input class="pesquisar-mobile" id="search-box" type="search" placeholder="Procurar"
                                     aria-label="pesquisar">
                             </form>
+                            <div id="resultados"></div>
                         </div>
                     </div>
 
@@ -95,8 +96,9 @@
     <div class="desktop-only">
         <div class="carousel">
             <div class="carousel-track">
-                <div class="slide"><img class="carrossel-foto" src="img/1.jpg" alt=""></div>
+                <div class="slide"><img class="carrossel-foto" src="https://i.pinimg.com/736x/37/bf/67/37bf677250210196d91376efd9d27cdc.jpg" alt=""></div>
                 <div class="slide"><a href="#descontos"><img class="carrossel-foto" src="img/2.jpg" alt=""></a></div>
+                <div class="slide"><img class="carrossel-foto" src="img/3.jpg" alt=""></div>
                 <div class="slide"><img class="carrossel-foto" src="img/3.jpg" alt=""></div>
             </div>
 
@@ -106,6 +108,9 @@
             </div>
 
             <div class="progress-indicators">
+                <div class="progress-bar">
+                    <div class="progress-bar-fill"></div>
+                </div>
                 <div class="progress-bar">
                     <div class="progress-bar-fill"></div>
                 </div>
@@ -119,31 +124,36 @@
         </div>
     </div>
 
+    <!-- carrossel mobile -->
+
     <div class="mobile-only">
-        <div class="carousel">
-            <div class="carousel-track">
-                <div class="slide"><img class="carrossel-foto" src="img/1-mobile (2).png" alt=""></div>
-                <div class="slide"><a href="#descontos"><img class="carrossel-foto" src="img/2.jpg" alt=""></a></div>
-                <div class="slide"><img class="carrossel-foto" src="img/3.jpg" alt=""></div>
+        <div class="mobile-carousel">
+            <div class="mobile-carousel-track">
+                <div class="mobile-slide"><img class="mobile-carrossel-foto" src="blob:https://br.pinterest.com/2901a426-290c-444b-882e-7a753665e7ca" alt=""></div>
+                <div class="mobile-slide"><a href="#descontos"><img class="mobile-carrossel-foto" src="img/1-mobile.png"
+                            alt=""></a></div>
+                <div class="mobile-slide"><img class="mobile-carrossel-foto" src="img/1-mobile (3).png" alt=""></div>
             </div>
 
-            <div class="carousel-buttons">
-                <button class="carousel-button prev">&#8249;</button>
-                <button class="carousel-button next">&#8250;</button>
+            <div class="mobile-carousel-buttons">
+                <button class="mobile-carousel-button mobile-prev">&#8249;</button>
+                <button class="mobile-carousel-button mobile-next">&#8250;</button>
             </div>
 
-            <div class="progress-indicators">
-                <div class="progress-bar">
-                    <div class="progress-bar-fill"></div>
+            <div class="mobile-progress-indicators">
+                <div class="mobile-progress-bar">
+                    <div class="mobile-progress-bar-fill"></div>
                 </div>
-                <div class="progress-bar">
-                    <div class="progress-bar-fill"></div>
+                <div class="mobile-progress-bar">
+                    <div class="mobile-progress-bar-fill"></div>
                 </div>
-                <div class="progress-bar">
-                    <div class="progress-bar-fill"></div>
+                <div class="mobile-progress-bar">
+                    <div class="mobile-progress-bar-fill"></div>
                 </div>
             </div>
         </div>
+
+
     </div>
 
     <div id="novidades" class="espaco"></div>
@@ -156,55 +166,83 @@
     <div class="catalogo">
         <div class="grid-item">
             <div class="container">
-                <!-- <a href="id do produto"> -->
-                <img src="img/4.jpg" alt="">
-                <!-- </a>  -->
+                <div class="imagens-catalogo">
+                    <img src="https://i.pinimg.com/736x/c2/66/1d/c2661d79fc1da942215bbc055483a0b8.jpg"
+                        class="principal">
+                    <img src="https://i.pinimg.com/736x/e8/7b/c2/e87bc255ae5488063dcc7dda7dde9281.jpg"
+                        class="secundaria">
+                </div>
                 <span class="tag">Lançamento</span>
             </div>
-            <h2>Colar de planeta</h2>
+            <h2>Conjunto arco-íris</h2>
             <h3>R$129,90</h3>
         </div>
         <div class="grid-item">
             <a href="produto.html" src="http://localhost:8080/produto.html?id=1">
                 <div class="container">
-                    <img src="img/5.jpg" alt="">
+                    <div class="imagens-catalogo">
+                        <img src="https://i.pinimg.com/736x/f3/4f/10/f34f103426c56e10d8edd46e7ec5e3b3.jpg"
+                            class="principal">
+                        <img src="https://i.pinimg.com/736x/9e/60/1f/9e601fab56a190a447744cd092c0f4a6.jpg"
+                            class="secundaria">
+                    </div>
                     <span class="tag">Lançamento</span>
                 </div>
             </a>
-            <h2>Brinco de planeta</h2>
+            <h2>Brincos geométricos</h2>
             <h3>R$99,90</h3>
         </div>
         <div class="grid-item">
             <div class="container">
-                <img src="img/6.jpg" alt="">
+                <div class="imagens-catalogo">
+                    <img src="https://i.pinimg.com/736x/cc/54/6b/cc546b3cec0d438201c36ba47e5f13a8.jpg"
+                        class="principal">
+                    <img src="https://i.pinimg.com/736x/63/f9/79/63f9797a4f75db9ae1f2851b72f61f97.jpg"
+                        class="secundaria">
+                </div>
                 <span class="tag">Lançamento</span>
             </div>
-            <h2>Brinco de laço</h2>
-            <h3>R$79,90</h3>
+            <h2>Conjunto rosas prateadas</h2>
+            <h3>R$129,90</h3>
         </div>
         <div class="grid-item">
             <div class="container">
-                <img src="img/7.jpg" alt="">
+                <div class="imagens-catalogo">
+                    <img src="https://i.pinimg.com/736x/d5/b1/1d/d5b11dde38b5e03f74c2956cd008e5f2.jpg"
+                        class="principal">
+                    <img src="https://i.pinimg.com/736x/ed/95/3d/ed953d59643ae508b8a4a48324f201db.jpg"
+                        class="secundaria">
+                </div>
                 <span class="tag">Lançamento</span>
             </div>
-            <h2>Brinco coração</h2>
-            <h3>R$110,00</h3>
+            <h2>Brincos de sol</h2>
+            <h3>R$60,00</h3>
         </div>
         <div class="grid-item">
             <div class="container">
-                <img src="img/8.jpg" alt="">
+                <div class="imagens-catalogo">
+                    <img src="https://i.pinimg.com/736x/8a/23/31/8a2331938dc5c86685919f3f708bc7bd.jpg"
+                        class="principal">
+                    <img src="https://i.pinimg.com/736x/7b/ab/10/7bab10a390bebcc8c7a721d3c33ff94c.jpg"
+                        class="secundaria">
+                </div>
                 <span class="tag">Lançamento</span>
             </div>
-            <h2>Anel anjo</h2>
-            <h3>R$160,00</h3>
+            <h2>Conjunto Miss Bella</h2>
+            <h3>R$360,00</h3>
         </div>
         <div class="grid-item">
             <div class="container">
-                <img src="img/9.jpg" alt="">
+                <div class="imagens-catalogo">
+                    <img src="https://i.pinimg.com/736x/d2/d3/ec/d2d3eca249079105c8347540f239a449.jpg"
+                        class="principal">
+                    <img src="https://i.pinimg.com/736x/87/f7/c0/87f7c0d4aac9c319ceb655b0eca6d340.jpg"
+                        class="secundaria">
+                </div>
                 <span class="tag">Lançamento</span>
             </div>
-            <h2>Colar de coração</h2>
-            <h3>R$190,90</h3>
+            <h2>Conjunto Wicked</h2>
+            <h3>R$399,90</h3>
         </div>
     </div>
     <div id="descontos" class="espaco-menor"></div>
@@ -292,22 +330,6 @@
             <img src="img/pasta2/1.jpg" alt="">
             <h2>Pingo Rosa</h2>
             <h3>R$149,99</h3>
-
-        </div>
-        <div class="grid-item">
-            <img src="img/pasta2/5.jpg" alt="">
-            <h2>Pink Majesty</h2>
-            <h3>R$119,90</h3>
-        </div>
-        <div class="grid-item">
-            <img src="img/pasta2/6.jpg" alt="">
-            <h2>Pink Essence </h2>
-            <h3>R$299,99</h3>
-        </div>
-        <div class="grid-item">
-            <img src="img/pasta2/7.jpg" alt="">
-            <h2>Brilho de Sakura </h2>
-            <h3>R$79,99</h3>
         </div>
     </div>
 
@@ -332,21 +354,6 @@
             <img src="img/pasta3/4.jpg" alt="">
             <h2>Rosa do Crepúsculo</h2>
             <h3>R$120,00</h3>
-        </div>
-        <div class="grid-item">
-            <img src="img/pasta3/5.jpg" alt="">
-            <h2>Brinco coração</h2>
-            <h3>R$96,00</h3>
-        </div>
-        <div class="grid-item">
-            <img src="img/pasta3/6.jpg" alt="">
-            <h2>Toque de Pétala</h2>
-            <h3>R$80,00</h3>
-        </div>
-        <div class="grid-item">
-            <img src="img/pasta3/7.jpg" alt="">
-            <h2>Pingo de Rosa </h2>
-            <h3>R$72,00</h3>
         </div>
     </div>
 
@@ -390,6 +397,30 @@
         </div>
     </div>
 
+    <div id="aneis" class="espaco-menor"></div>
+
+    <div class="topico">
+        <h1>Anel</h1>
+    </div>
+
+    <div class="catalogo">
+        <div class="grid-item">
+            <img src="img/pasta4/1.jpg" alt="">
+            <h2>Doce Encanto</h2>
+            <h3>R$160,00</h3>
+        </div>
+        <div class="grid-item">
+            <img src="img/pasta4/7.jpg" alt="">
+            <h2>Brilho Rosa Sereno</h2>
+            <h3>R$144,00</h3>
+        </div>
+        <div class="grid-item">
+            <img src="img/pasta4/4.jpg" alt="">
+            <h2>Rosa do Crepúsculo</h2>
+            <h3>R$120,00</h3>
+        </div>
+    </div>
+
     <!-- final -->
 
     <footer class="footer">
@@ -412,6 +443,8 @@
 
     <script src="JavaScriptDecoracoes/scroll.js"></script>
     <script src="JavaScriptDecoracoes/carrossel.js"></script>
+    <script src="JavaScriptDecoracoes/pesquisar.js"></script>
+
 </body>
 
 </html>

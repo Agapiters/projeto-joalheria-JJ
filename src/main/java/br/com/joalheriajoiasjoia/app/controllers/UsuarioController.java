@@ -3,7 +3,17 @@ package br.com.joalheriajoiasjoia.app.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import br.com.joalheriajoiasjoia.app.entities.Usuario;
 import br.com.joalheriajoiasjoia.app.services.UsuarioService;
@@ -15,54 +25,46 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioService usuarioService;
 
-	// Criar um novo usuário
 	@PostMapping
-	public Usuario salvar(@RequestBody Usuario usuario) {
-		return usuarioService.salvar(usuario);
+	public Usuario createUsuario(@RequestBody Usuario usuario) {
+		return usuarioService.saveUsuario(usuario);
 	}
 
-	// Buscar um usuário pelo ID
-	@GetMapping("/{id}")
-	public Usuario buscarPorId(@PathVariable Long id) {
-		return usuarioService.getUsuarioById(id); // método atualizado no service
-	}
-
-	// Atualizar um usuário
-	@PutMapping("/{id}")
-	public Usuario atualizar(@PathVariable Long id, @RequestBody Usuario usuarioAtualizado) {
-		return usuarioService.atualizar(id, usuarioAtualizado);
-	}
-
-	// Excluir um usuário
-	@DeleteMapping("/{id}")
-	public boolean excluir(@PathVariable Long id) {
-		return usuarioService.excluir(id);
-	}
-
-	// Listar todos os usuários
 	@GetMapping
-	public List<Usuario> listarTodos() {
-		return usuarioService.listarTodos();
+	public List<Usuario> getAllUsuario() {
+		return usuarioService.getAllUsuario();
 	}
 
-	// Buscar usuário por email
-	@GetMapping("/email/{email}")
-	public Usuario buscarPorEmail(@PathVariable String email) {
-		return usuarioService.buscarPorEmail(email);
+	@GetMapping("/{id}")
+	public Usuario getUsuario(@PathVariable Long id) {
+		return usuarioService.getUsuarioById(id);
 	}
 
-	// Método de login
+	@PutMapping
+	public Usuario editUsuario(@RequestBody Usuario usuario) {
+		return usuarioService.saveUsuario(usuario);
+	}
+
+	@DeleteMapping("/{id}")
+	public void deleteUsuario(@PathVariable Long id) {
+		usuarioService.deleteUsuario(id);
+	}
+	
+	//buscar por nome de usuário 
+	@GetMapping("/buscarpornomeusuario")
+	public Usuario getByNomeUsuario(@RequestParam String nomeUsuario) {
+		return usuarioService.findByNomeUsuario(nomeUsuario);
+	}
+		
 	@PostMapping("/login")
-	public Usuario login(@RequestBody Usuario loginRequest) {
-		Usuario usuario = usuarioService.autenticarUsuario(loginRequest.getEmail(), loginRequest.getSenha());
-
-		if (usuario != null) {
-
-			return usuario;
-		} else {
-
-			return null;
-		}
-
+	public ResponseEntity<Usuario> login(@RequestBody Usuario loginRequest) {
+	    Usuario pessoa = usuarioService.autenticarPessoa(loginRequest.getEmail(), loginRequest.getSenha());
+	    if (pessoa != null) {
+	        return ResponseEntity.ok(pessoa);
+	    } else {
+	        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+	    }
 	}
+
+
 }

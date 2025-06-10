@@ -10,56 +10,42 @@ import br.com.joalheriajoiasjoia.app.repositories.UsuarioRepository;
 
 @Service
 public class UsuarioService {
+	
+	@Autowired
+	private UsuarioRepository usuarioRepository;
+	
+	public Usuario saveUsuario( Usuario usuario) {
+		return usuarioRepository.save(usuario);
+	}
+	
+	public List<Usuario> getAllUsuario(){
+		return usuarioRepository.findAll();
+	}
+	
+	public Usuario getUsuarioById (Long id) {
+		return usuarioRepository.findById(id).orElse(null);
+	}
+	
+	public void deleteUsuario(Long id) {
+		usuarioRepository.deleteById(id);
+	}
+	public Usuario findByNomeUsuario(String nomeUsuario) {
+		return usuarioRepository.findByNomeUsuario(nomeUsuario);
+	}
+	
+	public Usuario autenticarPessoa(String email, String senha) {
+		
+		//Buscar no banco de dados um usuário que tenha o email informado
+		Usuario pessoa = usuarioRepository.findByEmail(email);
+		
+		//verifica se o usuário foi encontrado e se a senha informada confere com a senha do usuário
+		if (pessoa != null && pessoa.getSenha().equals(senha)) {
+			//se email e senha estiverem corretos, retorna o objeto usuário autenticado 
+			return pessoa;
+		}else {
+			//se o usuário não existir ou a senha não estiver correta, retorna null(falha na autenticação)
+			return null;
+		}
+	}
 
-    @Autowired
-    private UsuarioRepository usuarioRepository;
-
-    // Criar um novo usuário
-    public Usuario salvar(Usuario usuario) {
-        return usuarioRepository.save(usuario);
-    }
-
-    // Buscar um usuário pelo ID (sem Optional)
-    public Usuario getUsuarioById(Long id) {
-        return usuarioRepository.findById(id).orElse(null);
-    }
-
-    // Atualizar os dados de um usuário
-    public Usuario atualizar(Long id, Usuario usuarioAtualizado) {
-        if (usuarioRepository.existsById(id)) {
-            usuarioAtualizado.setIdUsuario(id);
-            return usuarioRepository.save(usuarioAtualizado);
-        }
-        return null; // Retorna null se o usuário não for encontrado
-    }
-
-    // Excluir um usuário
-    public boolean excluir(Long id) {
-        if (usuarioRepository.existsById(id)) {
-            usuarioRepository.deleteById(id);
-            return true;
-        }
-        return false; // Retorna false se o usuário não for encontrado
-    }
-
-    // Listar todos os usuários
-    public List<Usuario> listarTodos() {
-        return usuarioRepository.findAll();
-    }
-
-    // Buscar um usuário por email
-    public Usuario buscarPorEmail(String email) {
-        return usuarioRepository.findByEmail(email);
-    }
-
-    // Autenticar usuário por email e senha
-    public Usuario autenticarUsuario(String email, String senha) {
-        Usuario usuario = usuarioRepository.findByEmail(email);
-
-        // Verifica se o usuário existe e se a senha está correta
-        if (usuario != null && usuario.getSenha().equals(senha)) {
-            return usuario;
-        }
-        return null;
-    }
 }
