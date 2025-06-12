@@ -16,10 +16,10 @@ public class CategoriaProduto {
     @Column(name = "idCategoriaProduto", nullable = false)
     private long idCategoriaProduto;
 
-    @Column(name = "nome_categoria_produto", nullable = false)
+    @Column(name = "nomeCategoriaProduto", nullable = false)
     private String nomeCategoriaProduto;
 
-    @Column(name = "descricao_categoria_produto", nullable = false)
+    @Column(name = "descricaoCategoria", nullable = false)
     private String descricaoCategoria;
 
     public CategoriaProduto() {}

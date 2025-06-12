@@ -368,11 +368,12 @@ form .pesquisar:focus::placeholder {
   position: relative;
   width: 100%;
   overflow: hidden;
+  box-shadow: 0 5px 8px rgba(121, 121, 121, 0.1);
 }
 
 .carrossel-foto {
   width: 100%;
-  height: 100%;
+  box-shadow: 0 5px 8px rgba(121, 121, 121, 0.1);
 }
 
 .carousel-track {
@@ -426,7 +427,7 @@ form .pesquisar:focus::placeholder {
 }
 
 .progress-bar {
-  width: 20%;
+  width: 5%;
   height: 5px;
   background: #fafaef;
   opacity: 70%;
@@ -448,11 +449,13 @@ form .pesquisar:focus::placeholder {
   position: relative;
   width: 100%;
   overflow: hidden;
+  box-shadow: 0 5px 8px rgba(121, 121, 121, 0.1);
 }
 
 .mobile-carrossel-foto {
   width: 100%;
   height: 100%;
+  box-shadow: 0 5px 8px rgba(121, 121, 121, 0.1);
 }
 
 .mobile-carousel-track {
@@ -506,7 +509,7 @@ form .pesquisar:focus::placeholder {
 }
 
 .mobile-progress-bar {
-  width: 20%;
+  width: 5%;
   height: 5px;
   background: #fafaef;
   opacity: 70%;
@@ -524,28 +527,28 @@ form .pesquisar:focus::placeholder {
 
 /* conteúdo */
 .imagem-principal {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .imagens-catalogo .principal {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: opacity 0.3s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .imagens-catalogo .secundaria {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .imagens-catalogo:hover .principal {
-    opacity: 0;
+  opacity: 0;
 }
 
 .imagens-catalogo:hover .secundaria {
-    opacity: 1;
+  opacity: 1;
 }
 
 .catalogo {

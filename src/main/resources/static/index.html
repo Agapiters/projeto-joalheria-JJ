@@ -34,9 +34,8 @@
                 <a href="#novidades" class="link">Novidades</a>
                 <a href="#descontos" class="link">Descontos</a>
                 <a href="#colares" class="link">Colares</a>
-                <a href="#pulseiras" class="link">Pulseiras</a>
-                <a href="#brincos" class="link">Brincos</a>
                 <a href="#aneis" class="link">Anéis</a>
+                <a href="#brincos" class="link">Brincos</a>
             </div>
         </div>
     </header>
@@ -66,9 +65,8 @@
                             <a href="#novidades" class="link-mobile">Novidades</a><br>
                             <a href="#descontos" class="link-mobile">Descontos</a><br>
                             <a href="#colares" class="link-mobile">Colares</a><br>
-                            <a href="#pulseiras" class="link-mobile">Pulseiras</a><br>
-                            <a href="#brincos" class="link-mobile">Brincos</a><br>
                             <a href="#aneis" class="link-mobile">Anéis</a><br>
+                            <a href="#brincos" class="link-mobile">Brincos</a><br>
                         </div>
                         <div class="card-footer">
                             <form class="form" role="search">
@@ -96,10 +94,18 @@
     <div class="desktop-only">
         <div class="carousel">
             <div class="carousel-track">
-                <div class="slide"><img class="carrossel-foto" src="img/1.png" alt=""></div>
                 <div class="slide"><img class="carrossel-foto" src="img/2.png" alt=""></div>
-                <div class="slide"><img class="carrossel-foto" src="img/3.jpg" alt=""></div>
-                <div class="slide"><img class="carrossel-foto" src="img/video2.mp4" alt=""></div>
+                <div class="slide"><img class="carrossel-foto" src="img/1.png" alt=""></div>
+                <div class="slide">
+                    <video class="carrossel-foto" autoplay muted preload="auto" loop poster="img/videoJJ.mp4">
+                        <source src="img/videoJJ.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="slide">
+                    <video class="carrossel-foto" autoplay muted preload="auto" loop poster="img/video2.gif">
+                        <source src="img/video2.mp4" type="video/mp4">
+                    </video>
+                </div>
             </div>
 
             <div class="carousel-buttons">
@@ -129,10 +135,18 @@
     <div class="mobile-only">
         <div class="mobile-carousel">
             <div class="mobile-carousel-track">
-                <div class="mobile-slide"><img class="mobile-carrossel-foto" src="blob:https://br.pinterest.com/2901a426-290c-444b-882e-7a753665e7ca" alt=""></div>
-                <div class="mobile-slide"><a href="#descontos"><img class="mobile-carrossel-foto" src="img/1-mobile.png"
-                            alt=""></a></div>
-                <div class="mobile-slide"><img class="mobile-carrossel-foto" src="img/1-mobile (3).png" alt=""></div>
+                <div class="mobile-slide"><img class="mobile-carrossel-foto" src="img/2.png" alt=""></div>
+                <div class="mobile-slide"><img class="mobile-carrossel-foto" src="img/1.png" alt=""></div>
+                <div class="mobile-slide">
+                    <video class="mobile-carrossel-foto" autoplay muted preload="auto" loop poster="img/videoJJ.mp4">
+                        <source src="img/videoJJ.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="mobile-slide">
+                    <video class="mobile-carrossel-foto" autoplay muted preload="auto" loop poster="img/video2.gif">
+                        <source src="img/video2.mp4" type="video/mp4">
+                    </video>
+                </div>
             </div>
 
             <div class="mobile-carousel-buttons">
@@ -141,6 +155,9 @@
             </div>
 
             <div class="mobile-progress-indicators">
+                <div class="mobile-progress-bar">
+                    <div class="mobile-progress-bar-fill"></div>
+                </div>
                 <div class="mobile-progress-bar">
                     <div class="mobile-progress-bar-fill"></div>
                 </div>
@@ -164,21 +181,25 @@
     </div>
 
     <div class="catalogo">
-        <div class="grid-item">
-            <div class="container">
-                <div class="imagens-catalogo">
-                    <img src="https://i.pinimg.com/736x/c2/66/1d/c2661d79fc1da942215bbc055483a0b8.jpg"
-                        class="principal">
-                    <img src="https://i.pinimg.com/736x/e8/7b/c2/e87bc255ae5488063dcc7dda7dde9281.jpg"
-                        class="secundaria">
+
+        <a href="produto.html" src="http://localhost:8080/produto.html?id=1">
+            <div class="grid-item">
+                <div class="container">
+                    <div class="imagens-catalogo">
+                        <img src="https://i.pinimg.com/736x/c2/66/1d/c2661d79fc1da942215bbc055483a0b8.jpg"
+                            class="principal">
+                        <img src="https://i.pinimg.com/736x/e8/7b/c2/e87bc255ae5488063dcc7dda7dde9281.jpg"
+                            class="secundaria">
+                    </div>
+                    <span class="tag">Lançamento</span>
                 </div>
-                <span class="tag">Lançamento</span>
+                <h2>Conjunto de peças arco-íris</h2>
+                <h3>R$2500,00</h3>
             </div>
-            <h2>Conjunto arco-íris</h2>
-            <h3>R$129,90</h3>
-        </div>
-        <div class="grid-item">
-            <a href="produto.html" src="http://localhost:8080/produto.html?id=1">
+        </a>
+
+        <a href="produto.html" src="http://localhost:8080/produto.html?id=2">
+            <div class="grid-item">
                 <div class="container">
                     <div class="imagens-catalogo">
                         <img src="https://i.pinimg.com/736x/f3/4f/10/f34f103426c56e10d8edd46e7ec5e3b3.jpg"
@@ -188,62 +209,75 @@
                     </div>
                     <span class="tag">Lançamento</span>
                 </div>
-            </a>
-            <h2>Brincos geométricos</h2>
-            <h3>R$99,90</h3>
-        </div>
-        <div class="grid-item">
-            <div class="container">
-                <div class="imagens-catalogo">
-                    <img src="https://i.pinimg.com/736x/cc/54/6b/cc546b3cec0d438201c36ba47e5f13a8.jpg"
-                        class="principal">
-                    <img src="https://i.pinimg.com/736x/63/f9/79/63f9797a4f75db9ae1f2851b72f61f97.jpg"
-                        class="secundaria">
-                </div>
-                <span class="tag">Lançamento</span>
+                <h2>Brincos geométricos</h2>
+                <h3>R$650,00</h3>
             </div>
-            <h2>Conjunto rosas prateadas</h2>
-            <h3>R$129,90</h3>
-        </div>
-        <div class="grid-item">
-            <div class="container">
-                <div class="imagens-catalogo">
-                    <img src="https://i.pinimg.com/736x/d5/b1/1d/d5b11dde38b5e03f74c2956cd008e5f2.jpg"
-                        class="principal">
-                    <img src="https://i.pinimg.com/736x/ed/95/3d/ed953d59643ae508b8a4a48324f201db.jpg"
-                        class="secundaria">
+        </a>
+
+        <a href="produto.html" src="http://localhost:8080/produto.html?id=3">
+            <div class="grid-item">
+                <div class="container">
+                    <div class="imagens-catalogo">
+                        <img src="https://i.pinimg.com/736x/cc/54/6b/cc546b3cec0d438201c36ba47e5f13a8.jpg"
+                            class="principal">
+                        <img src="https://i.pinimg.com/736x/63/f9/79/63f9797a4f75db9ae1f2851b72f61f97.jpg"
+                            class="secundaria">
+                    </div>
+                    <span class="tag">Lançamento</span>
                 </div>
-                <span class="tag">Lançamento</span>
+                <h2>Conjunto rosas prateadas</h2>
+                <h3>R$1200,00</h3>
             </div>
-            <h2>Brincos de sol</h2>
-            <h3>R$60,00</h3>
-        </div>
-        <div class="grid-item">
-            <div class="container">
-                <div class="imagens-catalogo">
-                    <img src="https://i.pinimg.com/736x/8a/23/31/8a2331938dc5c86685919f3f708bc7bd.jpg"
-                        class="principal">
-                    <img src="https://i.pinimg.com/736x/7b/ab/10/7bab10a390bebcc8c7a721d3c33ff94c.jpg"
-                        class="secundaria">
+        </a>
+
+        <a href="produto.html" src="http://localhost:8080/produto.html?id=4">
+            <div class="grid-item">
+                <div class="container">
+                    <div class="imagens-catalogo">
+                        <img src="https://i.pinimg.com/736x/d5/b1/1d/d5b11dde38b5e03f74c2956cd008e5f2.jpg"
+                            class="principal">
+                        <img src="https://i.pinimg.com/736x/ed/95/3d/ed953d59643ae508b8a4a48324f201db.jpg"
+                            class="secundaria">
+                    </div>
+                    <span class="tag">Lançamento</span>
                 </div>
-                <span class="tag">Lançamento</span>
+                <h2>Brincos de sol</h2>
+                <h3>R$2300,00</h3>
             </div>
-            <h2>Conjunto Miss Bella</h2>
-            <h3>R$360,00</h3>
-        </div>
-        <div class="grid-item">
-            <div class="container">
-                <div class="imagens-catalogo">
-                    <img src="https://i.pinimg.com/736x/d2/d3/ec/d2d3eca249079105c8347540f239a449.jpg"
-                        class="principal">
-                    <img src="https://i.pinimg.com/736x/87/f7/c0/87f7c0d4aac9c319ceb655b0eca6d340.jpg"
-                        class="secundaria">
+        </a>
+
+        <a href="produto.html" src="http://localhost:8080/produto.html?id=5">
+            <div class="grid-item">
+                <div class="container">
+                    <div class="imagens-catalogo">
+                        <img src="https://i.pinimg.com/736x/8a/23/31/8a2331938dc5c86685919f3f708bc7bd.jpg"
+                            class="principal">
+                        <img src="https://i.pinimg.com/736x/7b/ab/10/7bab10a390bebcc8c7a721d3c33ff94c.jpg"
+                            class="secundaria">
+                    </div>
+                    <span class="tag">Lançamento</span>
                 </div>
-                <span class="tag">Lançamento</span>
+                <h2>Conjunto Miss Bella</h2>
+                <h3>R$7000,00</h3>
             </div>
-            <h2>Conjunto Wicked</h2>
-            <h3>R$399,90</h3>
-        </div>
+        </a>
+
+        <a href="produto.html" src="http://localhost:8080/produto.html?id=6">
+            <div class="grid-item">
+                <div class="container">
+                    <div class="imagens-catalogo">
+                        <img src="https://i.pinimg.com/736x/d2/d3/ec/d2d3eca249079105c8347540f239a449.jpg"
+                            class="principal">
+                        <img src="https://i.pinimg.com/736x/87/f7/c0/87f7c0d4aac9c319ceb655b0eca6d340.jpg"
+                            class="secundaria">
+                    </div>
+                    <span class="tag">Lançamento</span>
+                </div>
+                <h2>Conjunto Wicked</h2>
+                <h3>R$4500,00</h3>
+            </div>
+        </a>
+
     </div>
     <div id="descontos" class="espaco-menor"></div>
 
@@ -252,60 +286,58 @@
     </div>
 
     <div class="catalogo">
-        <div class="grid-item">
-            <div class="container">
-                <img src="img/pasta1/2.jpg" alt="">
-                <span class="tag">-20%</span>
+
+        <a href="produto.html" src="http://localhost:8080/produto.html?id=7">
+            <div class="grid-item">
+                <div class="container">
+                    <div class="imagens-catalogo">
+                        <img src="https://i.pinimg.com/736x/41/86/5d/41865dfeb5e6fe90aa63502d991ac3e3.jpg"
+                            class="principal">
+                        <img src="https://i.pinimg.com/736x/3b/fa/72/3bfa72913d41bc53c686c9b7e001d4c4.jpg"
+                            class="secundaria">
+                    </div>
+                    <span class="tag">-20%</span>
+                </div>
+                <h2>Doce encanto</h2>
+                <h1 class="desconto">R$2000,00</h1>
+                <h3>R$1600,00</h3>
             </div>
-            <h2>Doce Encanto</h2>
-            <h1 class="desconto">R$200,00</h1>
-            <h3>R$160,00</h3>
-        </div>
-        <div class="grid-item">
-            <div class="container">
-                <img src="img/pasta2/2.jpg" alt="">
-                <span class="tag">-20%</span>
+        </a>
+
+        <a href="produto.html" src="http://localhost:8080/produto.html?id=8">
+            <div class="grid-item">
+                <div class="container">
+                    <div class="imagens-catalogo">
+                        <img src="https://i.pinimg.com/736x/fd/a7/05/fda70503ddbb64d78a909198e62dccee.jpg"
+                            class="principal">
+                        <img src="https://i.pinimg.com/736x/a6/6f/99/a66f996a8ede8d2493b86195e4c508c1.jpg"
+                            class="secundaria">
+                    </div>
+                    <span class="tag">-20%</span>
+                </div>
+                <h2>Conjunto brilhos serenos</h2>
+                <h1 class="desconto">R$1800,00</h1>
+                <h3>R$1440,00</h3>
             </div>
-            <h2>Brilho Rosa Sereno</h2>
-            <h1 class="desconto">R$180,00</h1>
-            <h3>R$144,00</h3>
-        </div>
-        <div class="grid-item">
-            <div class="container">
-                <img src="img/pasta3/2.jpg" alt="">
-                <span class="tag">-20%</span>
+        </a>
+
+        <a href="produto.html" src="http://localhost:8080/produto.html?id=9">
+            <div class="grid-item">
+                <div class="container">
+                    <div class="imagens-catalogo">
+                        <img src="https://i.pinimg.com/736x/b6/23/77/b623771aba31dc9f3b6b3dfe7ef159af.jpg"
+                            class="principal">
+                        <img src="https://i.pinimg.com/736x/72/99/ad/7299aded2c314fa6cb0b3ff20338882d.jpg"
+                            class="secundaria">
+                    </div>
+                    <span class="tag">-20%</span>
+                </div>
+                <h2>Rosa do Crepúsculo</h2>
+                <h1 class="desconto">R$1500,00</h1>
+                <h3>R$1200,00</h3>
             </div>
-            <h2>Rosa do Crepúsculo</h2>
-            <h1 class="desconto">R$150,00</h1>
-            <h3>R$120,00</h3>
-        </div>
-        <div class="grid-item">
-            <div class="container">
-                <img src="img/pasta4/2.jpg" alt="">
-                <span class="tag">-20%</span>
-            </div>
-            <h2>Brinco coração</h2>
-            <h1 class="desconto">R$120,00</h1>
-            <h3>R$96,00</h3>
-        </div>
-        <div class="grid-item">
-            <div class="container">
-                <img src="img/pasta1/1.jpg" alt="">
-                <span class="tag">-20%</span>
-            </div>
-            <h2>Toque de Pétala</h2>
-            <h1 class="desconto">R$300,00</h1>
-            <h3>R$260,00</h3>
-        </div>
-        <div class="grid-item">
-            <div class="container">
-                <img src="img/pasta1/4.jpg" alt="">
-                <span class="tag">-20%</span>
-            </div>
-            <h2>Pingo de Rosa </h2>
-            <h1 class="desconto">R$90,00</h1>
-            <h3>R$72,00</h3>
-        </div>
+        </a>
+
     </div>
 
     <div id="colares" class="espaco-menor"></div>
@@ -314,87 +346,52 @@
         <h1>Colares</h1>
     </div>
 
-
     <div class="catalogo">
-        <div class="grid-item">
-            <img src="img/pasta2/3.jpg" alt="">
-            <h2>Gota do Encanto</h2>
-            <h3>R$49,99</h3>
-        </div>
-        <div class="grid-item">
-            <img src="img/pasta2/4.jpg" alt="">
-            <h2>Estrela Rosa</h2>
-            <h3>R$85,00</h3>
-        </div>
-        <div class="grid-item">
-            <img src="img/pasta2/1.jpg" alt="">
-            <h2>Pingo Rosa</h2>
-            <h3>R$149,99</h3>
-        </div>
-    </div>
 
-    <div id="pulseiras" class="espaco-menor"></div>
+        <a href="produto.html" src="http://localhost:8080/produto.html?id=10">
+            <div class="grid-item">
+                <div class="container">
+                    <div class="imagens-catalogo">
+                        <img src="https://i.pinimg.com/736x/05/27/2b/05272b4ead402d1de7849f8de516bcc8.jpg"
+                            class="principal">
+                        <img src="https://i.pinimg.com/736x/4e/1b/50/4e1b509c33635922566bf0ebea8a6268.jpg"
+                            class="secundaria">
+                    </div>
+                </div>
+                <h2>Colar Gota do Encanto</h2>
+                <h3>R$500,00</h3>
+            </div>
+        </a>
 
-    <div class="topico">
-        <h1>Pulseiras</h1>
-    </div>
+        <a href="produto.html" src="http://localhost:8080/produto.html?id=11">
+            <div class="grid-item">
+                <div class="container">
+                    <div class="imagens-catalogo">
+                        <img src="https://i.pinimg.com/736x/58/cf/c1/58cfc1dad535d86c8e09a2c5ffa739a0.jpg"
+                            class="principal">
+                        <img src="https://i.pinimg.com/736x/b0/55/83/b05583d98e2261fd5903463fd42d1e8c.jpg"
+                            class="secundaria">
+                    </div>
+                </div>
+                <h2>Conjunto de colares Sunshine</h2>
+                <h3>R$1400,00</h3>
+            </div>
+        </a>
 
-    <div class="catalogo">
-        <div class="grid-item">
-            <img src="img/pasta3/1.jpg" alt="">
-            <h2>Doce Encanto</h2>
-            <h3>R$160,00</h3>
-        </div>
-        <div class="grid-item">
-            <img src="img/pasta3/3.jpg" alt="">
-            <h2>Brilho Rosa Sereno</h2>
-            <h3>R$144,00</h3>
-        </div>
-        <div class="grid-item">
-            <img src="img/pasta3/4.jpg" alt="">
-            <h2>Rosa do Crepúsculo</h2>
-            <h3>R$120,00</h3>
-        </div>
-    </div>
-
-    <div id="brincos" class="espaco-menor"></div>
-
-    <div class="topico">
-        <h1>Brincos</h1>
-    </div>
-
-    <div class="catalogo">
-        <div class="grid-item">
-            <img src="img/pasta4/1.jpg" alt="">
-            <h2>Doce Encanto</h2>
-            <h3>R$160,00</h3>
-        </div>
-        <div class="grid-item">
-            <img src="img/pasta4/7.jpg" alt="">
-            <h2>Brilho Rosa Sereno</h2>
-            <h3>R$144,00</h3>
-        </div>
-        <div class="grid-item">
-            <img src="img/pasta4/4.jpg" alt="">
-            <h2>Rosa do Crepúsculo</h2>
-            <h3>R$120,00</h3>
-        </div>
-        <div class="grid-item">
-            <img src="img/pasta4/5.jpg" alt="">
-            <h2>Brinco coração</h2>
-            <h3>R$96,00</h3>
-        </div>
-        <div class="grid-item">
-            <img src="img/pasta4/3.jpg" alt="">
-            <h2>Toque de Pétala</h2>
-            <h3>R$80,00</h3>
-            </p>
-        </div>
-        <div class="grid-item">
-            <img src="img/pasta4/6.jpg" alt="">
-            <h2>Pingo de Rosa </h2>
-            <h3>R$72,00</h3>
-        </div>
+        <a href="produto.html" src="http://localhost:8080/produto.html?id=12">
+            <div class="grid-item">
+                <div class="container">
+                    <div class="imagens-catalogo">
+                        <img src="https://i.pinimg.com/736x/57/e8/7f/57e87f821c3c0d85b352fb3bf840b825.jpg"
+                            class="principal">
+                        <img src="https://i.pinimg.com/736x/c4/87/0e/c4870e46ef0d456c30e6eb803158168c.jpg"
+                            class="secundaria">
+                    </div>
+                </div>
+                <h2>Colar Flora Rosa</h2>
+                <h3>R$760,00</h3>
+            </div>
+        </a>
     </div>
 
     <div id="aneis" class="espaco-menor"></div>
@@ -404,21 +401,106 @@
     </div>
 
     <div class="catalogo">
-        <div class="grid-item">
-            <img src="img/pasta4/1.jpg" alt="">
-            <h2>Doce Encanto</h2>
-            <h3>R$160,00</h3>
-        </div>
-        <div class="grid-item">
-            <img src="img/pasta4/7.jpg" alt="">
-            <h2>Brilho Rosa Sereno</h2>
-            <h3>R$144,00</h3>
-        </div>
-        <div class="grid-item">
-            <img src="img/pasta4/4.jpg" alt="">
-            <h2>Rosa do Crepúsculo</h2>
-            <h3>R$120,00</h3>
-        </div>
+
+        <a href="produto.html" src="http://localhost:8080/produto.html?id=13">
+            <div class="grid-item">
+                <div class="container">
+                    <div class="imagens-catalogo">
+                        <img src="https://i.pinimg.com/736x/c6/ae/b7/c6aeb79e7c15caba8cdb8ea21824ebc1.jpg"
+                            class="secundaria">
+                        <img src="https://i.pinimg.com/736x/6b/15/bb/6b15bbf86cbe45c25e9c8fec4b72c6fc.jpg"
+                            class="principal">
+                    </div>
+                </div>
+                <h2>Anel Pétalas Douradas</h2>
+                <h3>R$450,00</h3>
+            </div>
+        </a>
+
+        <a href="produto.html" src="http://localhost:8080/produto.html?id=14">
+            <div class="grid-item">
+                <div class="container">
+                    <div class="imagens-catalogo">
+                        <img src="https://i.pinimg.com/736x/57/57/2d/57572d1209d2ee4d0fd49cd6c166de22.jpg"
+                            class="secundaria">
+                        <img src="https://i.pinimg.com/736x/04/07/75/040775157759c8f41a36a640075e401d.jpg"
+                            class="principal">
+                    </div>
+                </div>
+                <h2>Anel Mar Perolado</h2>
+                <h3>R$300,00</h3>
+            </div>
+        </a>
+
+        <a href="produto.html" src="http://localhost:8080/produto.html?id=15">
+            <div class="grid-item">
+                <div class="container">
+                    <div class="imagens-catalogo">
+                        <img src="https://i.pinimg.com/736x/93/8b/b4/938bb4ea672018df5a711ade65f3d191.jpg"
+                            class="secundaria">
+                        <img src="https://i.pinimg.com/736x/20/a0/8a/20a08abe49d54764e49b17fde1d2984d.jpg"
+                            class="principal">
+                    </div>
+                </div>
+                <h2>Anel Pontos de Luz</h2>
+                <h3>R$120,00</h3>
+            </div>
+        </a>
+
+    </div>
+
+    <div id="brincos" class="espaco-menor"></div>
+
+    <div class="topico">
+        <h1>Brincos</h1>
+    </div>
+
+    <div class="catalogo">
+
+        <a href="produto.html" src="http://localhost:8080/produto.html?id=16">
+            <div class="grid-item">
+                <div class="container">
+                    <div class="imagens-catalogo">
+                        <img src="https://i.pinimg.com/736x/85/48/f7/8548f7678d9aac612d9baf0e3a7203e6.jpg"
+                            class="principal">
+                        <img src="https://i.pinimg.com/736x/8c/bc/b4/8cbcb44d0a6be18f5560153f55dfcd0d.jpg"
+                            class="secundaria">
+                    </div>
+                </div>
+                <h2>Brincos lunar</h2>
+                <h3>R$890,00</h3>
+            </div>
+        </a>
+
+        <a href="produto.html" src="http://localhost:8080/produto.html?id=17">
+            <div class="grid-item">
+                <div class="container">
+                    <div class="imagens-catalogo">
+                        <img src="https://i.pinimg.com/736x/96/67/79/966779942aae4bfdfc75a97182bbb32e.jpg"
+                            class="principal">
+                        <img src="https://i.pinimg.com/736x/c5/8d/7f/c58d7fb731fe683b8019aafb17a12c20.jpg"
+                            class="secundaria">
+                    </div>
+                </div>
+                <h2>Brincos Mar Perolado</h2>
+                <h3>R$500,00</h3>
+            </div>
+        </a>
+
+        <a href="produto.html" src="http://localhost:8080/produto.html?id=18">
+            <div class="grid-item">
+                <div class="container">
+                    <div class="imagens-catalogo">
+                        <img src="https://i.pinimg.com/736x/e2/4c/87/e24c87be0520250f50b6935757895309.jpg"
+                            class="principal">
+                        <img src="https://i.pinimg.com/736x/98/93/05/989305b8f35275171d481979c98655db.jpg"
+                            class="secundaria">
+                    </div>
+                </div>
+                <h2>Brincos Gota do Encanto</h2>
+                <h3>R$400,00</h3>
+            </div>
+        </a>
     </div>
 
     <!-- final -->

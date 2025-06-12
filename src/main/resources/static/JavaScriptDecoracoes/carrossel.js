@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let currentIndex = 0;
         let timer;
-        const slideInterval = 5000;
+        const slideInterval = 6000;
 
         const updateSlidePosition = () => {
             track.style.transform = `translateX(-${currentIndex * 100}%)`;
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let currentIndex = 0;
         let timer;
-        const slideInterval = 5000;
+        const slideInterval = 6000;
 
         const updateSlidePosition = () => {
             track.style.transform = `translateX(-${currentIndex * 100}%)`;
