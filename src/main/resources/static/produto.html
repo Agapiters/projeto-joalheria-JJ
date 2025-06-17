@@ -30,11 +30,11 @@
 
         <div class="nav2">
             <div class="navbar2">
-				<a href="#novidades" class="link">Novidades</a>
-				<a href="#descontos" class="link">Descontos</a>
-				<a href="#colares" class="link">Colares</a>
-				<a href="#aneis" class="link">Anéis</a>
-				<a href="#brincos" class="link">Brincos</a>
+                <a href="#novidades" class="link">Novidades</a>
+                <a href="#descontos" class="link">Descontos</a>
+                <a href="#colares" class="link">Colares</a>
+                <a href="#aneis" class="link">Anéis</a>
+                <a href="#brincos" class="link">Brincos</a>
             </div>
         </div>
     </header>
@@ -61,15 +61,15 @@
 
                     <div class="card">
                         <div class="card-body">
-							<a href="#novidades" class="link">Novidades</a>
-							<a href="#descontos" class="link">Descontos</a>
-							<a href="#colares" class="link">Colares</a>
-							<a href="#aneis" class="link">Anéis</a>
-							<a href="#brincos" class="link">Brincos</a>
+                            <a href="#novidades" class="link-mobile">Novidades</a><br>
+                            <a href="#descontos" class="link-mobile">Descontos</a><br>
+                            <a href="#colares" class="link-mobile">Colares</a><br>
+                            <a href="#aneis" class="link-mobile">Anéis</a><br>
+                            <a href="#brincos" class="link-mobile">Brincos</a><br>
                         </div>
                         <div class="card-footer">
                             <form class="form" role="search">
-                                <input class="pesquisar-mobile" type="search" placeholder="Procurar"
+                                <input class="pesquisar-mobile" id="search-box" type="search" placeholder="Procurar"
                                     aria-label="pesquisar">
                             </form>
                         </div>
@@ -86,17 +86,18 @@
 
     <div class="produto">
         <div class="grid-img">
-            <img id="produto-imagem"src="" alt="">
+            <img id="produto-imagem" src="" alt="">
         </div>
         <div class="grid-desc">
             <h1 id="produto-nome"></h1>
             <h2 id="produto-preco"></h2> <br>
             <h3>parcela até em 10x sem juros</h3> <br><br><br>
+            <!-- botão que leva a um link externo -->
             <a href="https://w.app/gwaea3"><button class="adicionar">Encomendar</button></a>
         </div>
     </div>
 
-    <!-- descrição d produto-->
+    <!-- descrição do produto-->
 
     <h1 class="detalhes">Detalhes</h1>
     <div class="espacamento"></div>
@@ -105,10 +106,9 @@
             <p id="produto-descricao" class="descricao"></p>
         </div>
         <div class="grid-desc">
-            <p class="descricao">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi eaque reiciendis
-                velit. Natus nam quis
-                doloremque amet mollitia cupiditate laborum esse illum aliquam, neque similique ullam. Suscipit
-                necessitatibus veritatis porro.</p>
+            <p class="descricao">A Joalheria Joias Joia se destaca pela precisão, qualidade e durabilidade de suas
+                peças, criadas com materiais nobres e artesãos renomados. Seu compromisso vai além de joias comuns,
+                oferecendo verdadeiras obras de arte que refletem elegância e personalidade.</p>
         </div>
     </div>
 

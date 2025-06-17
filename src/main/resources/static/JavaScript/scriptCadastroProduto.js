@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					preco,
 					img,
 					categoriaProduto: {
-						idCategoriaProduto: categoriaProduto
+						idCategoriaProduto: categoriaProduto 
 					},
 					tipoProduto: {
 						idTipoProduto: tipoProduto

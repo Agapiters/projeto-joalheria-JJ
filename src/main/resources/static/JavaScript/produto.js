@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById("produto-descricao").textContent = produto.descricao;
                
                 // Atualiza o preço do produto formatado
-                document.getElementById("produto-preco").textContent = produto.preco;
+                document.getElementById("produto-preco").textContent = `R$ ${produto.preco}`;
             })
             // Exibe erro no console se a requisição falhar
             .catch(error => console.error("Erro ao carregar produto:", error));

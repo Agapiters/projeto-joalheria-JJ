@@ -2,12 +2,12 @@
 
 * {
     margin: 0;
+    font-family: 'Poppins', sans-serif !important;
     zoom: 100px;
 }
 
 body {
     background-color: #fafaef;
-    font-family: 'Poppins', sans-serif !important;
 }
 
 .espaco-menor {
@@ -204,7 +204,6 @@ form .pesquisar:focus::placeholder {
 
 .modal .modal-trigger .modal-overlay {
     top: 0;
-
     opacity: 0;
     width: 100%;
     height: 40%;
@@ -214,7 +213,7 @@ form .pesquisar:focus::placeholder {
 }
 
 .modal .modal-trigger~.modal-container {
-    top: 185px;
+    top: 175px;
     left: 50%;
     opacity: 0;
     width: 100%;
