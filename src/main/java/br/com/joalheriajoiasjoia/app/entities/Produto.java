@@ -1,7 +1,5 @@
 package br.com.joalheriajoiasjoia.app.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,10 +15,10 @@ public class Produto {
 	// Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idProduto", nullable = false)
+	@Column(name = "id_produto", nullable = false)
 	private long idProduto;
 
-	@Column(name = "nomeProduto", nullable = false)
+	@Column(name = "nome_produto", nullable = false)
 	private String nomeProduto;
 
 	@Column(name = "descricao", nullable = false)
@@ -33,18 +31,15 @@ public class Produto {
 	private String img;
 	
 	@ManyToOne
-	@JsonBackReference
-	@JoinColumn(name = "ornamentoProduto", nullable = false)
+	@JoinColumn(name = "ornamento_produto", nullable = false)
 	private Ornamentos ornamentos;
 	
 	@ManyToOne
-	@JsonBackReference
-	@JoinColumn(name = "categoriaProduto", nullable = false)
+	@JoinColumn(name = "categoria_produto", nullable = false)
 	private CategoriaProduto categoriaProduto;
 	
 	@ManyToOne
-	@JsonBackReference
-	@JoinColumn(name = "tipoProduto", nullable = false)
+	@JoinColumn(name = "tipo_produto", nullable = false)
 	private TipoProduto tipoProduto;
 	
 	//Construtores

@@ -1,15 +1,10 @@
 package br.com.joalheriajoiasjoia.app.entities;
 
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -18,19 +13,15 @@ public class TipoProduto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idTipoProduto", nullable = false)
+    @Column(name = "id_tipo_produto", nullable = false)
     private long idTipoProduto;
 
-    @Column(name = "nomeTipoProduto", nullable = false)
+    @Column(name = "nome_tipo_produto", nullable = false)
     private String nomeTipoProduto;
 
-    @Column(name = "descricaoTipoProduto", nullable = false)
+    @Column(name = "descricao_tipo_produto", nullable = false)
     private String descricaoTipoProduto;
     
-    @OneToMany(mappedBy = "tipoProduto")
-    @JsonManagedReference
-    private List<Produto> produtos;
-
     public TipoProduto() {
     }
 
@@ -65,11 +56,4 @@ public class TipoProduto {
         this.descricaoTipoProduto = descricaoTipoProduto;
     }
 
-    public List<Produto> getProdutos() {
-        return produtos;
-    }
-
-    public void setProdutos(List<Produto> produtos) {
-        this.produtos = produtos;
-    }
 }

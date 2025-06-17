@@ -1,39 +1,33 @@
+// Espera o carregamento completo do DOM antes de executar o código
 document.addEventListener("DOMContentLoaded", () => {
+   
     // Obtém os parâmetros da URL
     const urlParams = new URLSearchParams(window.location.search);
-    // Pega o valor do ID
-    const produtoId = urlParams.get("id");
-
-    // Se tiver o produto
-    if (produtoId) {
-        // Realiza o fetch para obter as informações do backend
-        fetch(`http://localhost:8080/cadastro_produto/${produtoId}`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Erro ao buscar o produto: " + response.status);
-                }
-                return response.json();
-            })
+   
+    // Pega o valor do parâmetro "id"
+    const idProduto = urlParams.get("id");
+   
+    // Se houver um ID de produto na URL
+    if (idProduto) {
+       
+        // Faz uma requisição ao backend para buscar os dados do produto
+        fetch(`http://localhost:8080/cadastroproduto/${idProduto}`)
+            .then(response => response.json()) // Converte a resposta para JSON
             .then(produto => {
-                // Atualiza a imagem do produto e o nome
-                const img = document.getElementById("produto-img");
-                img.src = produto.imgUrl;
-                img.alt = produto.nomeProduto;
+                // Atualiza a imagem do produto
+                document.getElementById("produto-imagem").src = produto.img;
+                document.getElementById("produto-imagem").alt = produto.nomeProduto;
 
                 // Atualiza o nome do produto
                 document.getElementById("produto-nome").textContent = produto.nomeProduto;
-
+               
                 // Atualiza a descrição do produto
-                document.getElementById("produto-descricao").textContent = produto.descricaoProduto;
-
-                // Atualiza o preço do produto
-                document.getElementById("produto-preco").textContent = `R$ ${produto.preco.toFixed(2)}`;
+                document.getElementById("produto-descricao").textContent = produto.descricao;
+               
+                // Atualiza o preço do produto formatado
+                document.getElementById("produto-preco").textContent = produto.preco;
             })
-            .catch(error => {
-                console.error("Erro ao carregar produto:", error);
-                alert("Não foi possível carregar as informações do produto.");
-            });
-    } else {
-        alert("ID do produto não informado na URL.");
+            // Exibe erro no console se a requisição falhar
+            .catch(error => console.error("Erro ao carregar produto:", error));
     }
 });

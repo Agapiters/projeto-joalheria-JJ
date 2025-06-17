@@ -2,12 +2,12 @@
 
 * {
     margin: 0;
-    font-family: 'Poppins', sans-serif !important;
     zoom: 100px;
 }
 
 body {
     background-color: #fafaef;
+    font-family: 'Poppins', sans-serif !important;
 }
 
 .espaco-menor {

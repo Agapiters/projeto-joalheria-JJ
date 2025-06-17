@@ -6,42 +6,42 @@ INSERT IGNORE INTO tb_tipo_usuario (id_tipo_usuario, nome_tipo_usuario) VALUES
 (2, 'Cliente');
 
 -- INSERÇÃO: Categorias de Produto
-INSERT IGNORE INTO tb_categoria_produto (idCategoriaProduto, nomeCategoriaProduto, descricaoCategoria) VALUES
+INSERT IGNORE INTO tb_categoria_produto (id_categoria_produto, nome_categoria_produto, descricao_categoria) VALUES
 (1, 'Novidades', 'Novidades do site'),
-(2, 'Descontos', 'Peças com desconto '),
+(2, 'Descontos', 'Peças com desconto'),
 (3, 'Colares', 'Peças para o pescoço'),
 (4, 'Aneis', 'Peças para os dedos'),
 (5, 'Brincos', 'Peças para as orelhas');
 
 -- INSERÇÃO: Tipos de Produto
-INSERT IGNORE INTO tb_tipo_produto (idTipoProduto, nomeTipoProduto, descricaoTipoProduto) VALUES
+INSERT IGNORE INTO tb_tipo_produto (id_tipo_produto, nome_tipo_produto, descricao_tipo_produto) VALUES
 (1, 'Ouro', '18k'),
 (2, 'Prata', '750');
 
--- INSERÇÃO: De ornamentos
-INSERT IGNORE INTO tb_ornamentos (idOrnamentos, nomeOrnamentos, descricaoOrnamentos) VALUES
+-- INSERÇÃO: Ornamentos
+INSERT IGNORE INTO tb_ornamentos (id_ornamentos, nome_ornamento, descricao_ornamento) VALUES
 (1, 'Diamante rosa', '18k'),
 (2, 'Quartzo rosa', '750'),
 (3, 'Turmalina rosa', '750'),
 (4, 'Morganita', '750');
 
 -- INSERÇÃO: Usuários
-INSERT IGNORE INTO tb_usuario (idUsuario, nomeUsuario, cpf, telefone, data_nascimento, email, tipo_usuario, senha) VALUES
+INSERT IGNORE INTO tb_usuario (id_usuario, nome_usuario, cpf, telefone, data_nascimento, email, tipo_usuario, senha) VALUES
 (1, 'Ana Silva', '12345678901', '11999990001', '1990-05-01', 'ana@email.com', 2, 'senha12'),
 (2, 'Bruno Costa', '12345678902', '11999990002', '1988-03-12', 'bruno@email.com', 2, 'senha123'),
 (3, 'Carla Mendes', '12345678903', '11999990003', '1992-08-23', 'carla@email.com', 2, 'senha1234'),
 (4, 'Diego Souza', '12345678904', '11999990004', '1985-11-15', 'diego@email.com', 2, 'senha1235'),
 (5, 'Eduarda Lima', '12345678905', '11999990005', '1995-02-28', 'eduarda@email.com', 2, 'senha1236');
 
+-- INSERÇÃO: Endereços
+INSERT IGNORE INTO tb_endereco (id_endereco, bairro, cep, cidade, comp, estado, nome_rua, numero_casa, id_usuario) VALUES
+(1, 'Centro', '01001-000', 'São Paulo', 'Apto 101', 'SP', 'Rua das Flores', '123', 1),
+(2, 'Bela Vista', '01310-100', 'São Paulo', 'Apto 202', 'SP', 'Av. Paulista', '1000', 2),
+(3, 'Funcionários', '30130-000', 'Belo Horizonte', 'Sala Comercial', 'MG', 'Rua das Acácias', '45', 3),
+(4, 'Boa Vista', '50000-000', 'Recife', 'Perto do metrô', 'PE', 'Rua do Sol', '789', 4),
+(5, 'Centro', '80000-000', 'Curitiba', 'Loja 1', 'PR', 'Rua Central', '321', 5);
 
-INSERT IGNORE INTO tb_endereco (nomeRua, numeroCasa, cidade, estado, cep, IdUsuario, bairro, comp) VALUES
-('Rua das Flores', '123', 'São Paulo', 'SP', '01001-000', 1, 'Centro', 'Apto 101'),
-('Av. Paulista', '1000', 'São Paulo', 'SP', '01310-100', 2, 'Bela Vista', 'Apto 202'),
-('Rua das Acácias', '45', 'Belo Horizonte', 'MG', '30130-000', 3, 'Funcionários', 'Sala Comercial'),
-('Rua do Sol', '789', 'Recife', 'PE', '50000-000', 4, 'Boa Vista', 'Perto do metrô'),
-('Rua Central', '321', 'Curitiba', 'PR', '80000-000', 5, 'Centro', 'Loja 1');
-
-INSERT IGNORE INTO tb_produto (idProduto, nomeProduto, descricao, preco, img, categoriaProduto, tipoProduto, ornamentoProduto) VALUES
+INSERT IGNORE INTO tb_produto (id_produto, nome_produto, descricao, preco, img, categoria_produto, tipo_produto, ornamento_produto) VALUES
 (1, 'Conjunto de peças arco-íris', 'Conjunto de peças com pedras preciosas nas cores do arco-íris.', 2500.00, 'https://i.pinimg.com/736x/c2/66/1d/c2661d79fc1da942215bbc055483a0b8.jpg', 1, 1, 1),
 (2, 'Brincos geométricos', 'Brincos duplos com pedras moldadas em formato retangular.', 650.00, 'https://i.pinimg.com/736x/f3/4f/10/f34f103426c56e10d8edd46e7ec5e3b3.jpg', 1, 1, 4),
 (3, 'Conjunto rosas prateadas', 'Conjunto composto por pares de colares em pedras rosas e prateadas, juntamente de um combo de pulseiras do mesmo material.', 1200.00, 'https://i.pinimg.com/736x/cc/54/6b/cc546b3cec0d438201c36ba47e5f13a8.jpg', 1, 1, 3),
@@ -61,4 +61,4 @@ INSERT IGNORE INTO tb_produto (idProduto, nomeProduto, descricao, preco, img, ca
 (17, 'Brincos Mar Perolado', 'Modelo elegante para festas', 500.00, 'https://i.pinimg.com/736x/96/67/79/966779942aae4bfdfc75a97182bbb32e.jpg', 5, 2, 4),
 (18, 'Brincos Gota do Encanto', 'Pulseira de ouro com pequeno pingente de ouro coberto por pequenas pedras preciosas.', 400.00, 'https://i.pinimg.com/736x/e2/4c/87/e24c87be0520250f50b6935757895309.jpg', 5, 1, 2),
 (19, 'Colar Minimalista', 'Design simples e moderno', 390.00, 'img/colar5.jpg', 5, 2, 2),
-(20, 'Pulseira de Couro e Ouro', 'Combinação moderna de materiais', 1300.00, 'img/pulseira5.jpg', 1, 1, 2),
+(20, 'Pulseira de Couro e Ouro', 'Combinação moderna de materiais', 1300.00, 'img/pulseira5.jpg', 1, 1, 2);

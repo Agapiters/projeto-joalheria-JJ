@@ -19,10 +19,10 @@ public class Usuario {
 	// Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idUsuario", nullable = false)
+	@Column(name = "id_usuario", nullable = false)
 	private Long idUsuario;
 	
-	@Column(name = "nomeUsuario", nullable = false, length = 100)
+	@Column(name = "nome_usuario", nullable = false, length = 100)
 	private String nomeUsuario;
 	
 	@Column(name = "cpf", nullable = false, length = 11, unique = true)

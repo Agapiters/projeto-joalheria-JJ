@@ -8,45 +8,46 @@ public class Ornamentos {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idOrnamentos", nullable = false)
-    private Long idOrnamentos;
+    @Column(name = "id_ornamentos", nullable = false)
+    private Long id;
 
-    @Column(name = "nomeOrnamento", nullable = false, length = 100)
-    private String nomeOrnamento;
+    @Column(name = "nome_ornamento", nullable = false, length = 100)
+    private String nome;
 
-    @Column(name = "descricaoOrnamento", length = 255)
-    private String descricaoOrnamento;
+    @Column(name = "descricao_ornamento", length = 255)
+    private String descricao;
 
     public Ornamentos() {
+    	
     }
 
-    public Ornamentos(Long idOrnamentos, String nomeOrnamento, String descricaoOrnamento) {
-        this.idOrnamentos = idOrnamentos;
-        this.nomeOrnamento = nomeOrnamento;
-        this.descricaoOrnamento = descricaoOrnamento;
+    public Ornamentos(Long id, String nome, String descricao) {
+        this.id = id;
+        this.nome = nome;
+        this.descricao = descricao;
     }
 
-    public Long getIdOrnamentos() {
-        return idOrnamentos;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdOrnamentos(Long idOrnamentos) {
-        this.idOrnamentos = idOrnamentos;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getNomeOrnamento() {
-        return nomeOrnamento;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomeOrnamento(String nomeOrnamento) {
-        this.nomeOrnamento = nomeOrnamento;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getDescricaoOrnamento() {
-        return descricaoOrnamento;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setDescricaoOrnamento(String descricaoOrnamento) {
-        this.descricaoOrnamento = descricaoOrnamento;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 }

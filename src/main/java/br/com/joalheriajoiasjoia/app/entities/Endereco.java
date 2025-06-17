@@ -15,10 +15,10 @@ public class Endereco {
     @Column(name = "cep")
     private String cep;
 
-    @Column(name = "nomeRua")
+    @Column(name = "nome_rua")
     private String nomeRua;
 
-    @Column(name = "numeroCasa")
+    @Column(name = "numero_casa")
     private String numeroCasa;
 
     @Column(name = "bairro")
@@ -36,7 +36,7 @@ public class Endereco {
 
     // Relacionamento ManyToOne com a entidade Usuario
     @ManyToOne
-    @JoinColumn(name = "IdUsuario", nullable = false)
+    @JoinColumn(name = "id_usuario", nullable = false)
     private Usuario usuario;
 
     // Construtores
